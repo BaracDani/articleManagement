@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Business.Interfaces
+{
+    public interface IAccountComponent
+    {
+        bool Login(string email, string password);
+
+        bool ChangePassword(string email);
+
+        bool Register(string firstname, string lastname, string email, string password);
+    }
+}

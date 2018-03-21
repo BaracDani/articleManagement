@@ -1,0 +1,61 @@
+﻿<div class="topLoginPage"
+     style="background: url('assets/images/backgr4.png') no-repeat;background-size:cover;background-position: center;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="appl">Create account</div>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+
+        <div class="login">
+          <input class="register-input" type="text" placeholder="First Name" [(ngModel)]="firstname"/><br/>
+          <input class="register-input" type="text" placeholder="Last Name" [(ngModel)]="lastname"/><br/>
+          <input class="register-input" type="email" placeholder="Email address" [(ngModel)]="email"/> <br/>
+          <input class="register-input" type="password" placeholder="Password" [(ngModel)]="password"/><br/>
+          <input class="register-input" type="password" placeholder="Re-type password" [(ngModel)]="confirmPassword"/>
+          <div>{{registerMessage}}</div>
+        </div>
+
+      </div>
+      <div class="col-1"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 register-container">
+        <button type="button" id="thick1" aria-hidden="true" (click)="registerClick()">Register</button>
+      </div>
+      <div class="col-4"></div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="bottomLoginPage">
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-8">
+        <p style="padding-top:10px;">Developed by Daniel Barac. All rights reserved</p>
+      </div>
+      <div class="col-4">
+        <p class="about" align="right" style="padding-top:10px;"><b><a id="contact" href="">contact</a> | <a id="about"
+                                                                                                             href="">about
+          us</a></b></p>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>

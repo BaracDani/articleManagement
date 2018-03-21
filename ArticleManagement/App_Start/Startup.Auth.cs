@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using ArticleManagement.Models;
+using Service.Models;
 
-namespace ArticleManagement
+namespace Service
 {
     public partial class Startup
     {
