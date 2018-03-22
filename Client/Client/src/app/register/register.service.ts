@@ -1,6 +1,4 @@
-﻿
-
-import { IUser } from './user';
+﻿import {IUser} from './user';
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";
@@ -9,26 +7,27 @@ import {of} from "rxjs/observable/of";
 
 @Injectable()
 export class RegisterService {
-    private _registerUrl = 'http://localhost:59001/api/account/register';
+  private _registerUrl = 'http://localhost:52838/api/account/register';
 
-    constructor(private _http: HttpClient) {
+  constructor(private _http: HttpClient) {
 
-    }
+  }
 
-    register(user: IUser): Observable<any> {
+  register(user: IUser): Observable<any> {
 
-        var creds = "firstname=" + user.firstname + "&lastname=" + user.lastname + "&email=" + user.email + "&password=" + user.password;
-        const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded' });
-        //headers.append('Content-Type', 'application/x-www-form-urlencoded');
-        //headers.append('Authorization', 'Basic 1234');
+    var creds = "firstname=" + user.firstname + "&lastname=" + user.lastname + "&email=" + user.email
+      + "&password=" + user.password + "&confirmPassword=" + user.confirmPassword;
+    const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    //headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    //headers.append('Authorization', 'Basic 1234');
 
-        return this._http.post(this._registerUrl, creds, { headers: headers })
-            .map((response: Response) => <any>response.json()).pipe(
-            tap(_ => console.log(`regggg`)),
-            catchError(this.handleError<any>('register')));
-    }
+    return this._http.post(this._registerUrl, creds, {headers: headers})
+      .map((response: Response) => <any>response.json()).pipe(
+        tap(_ => console.log(`regggg`)),
+        catchError(this.handleError<any>('register')));
+  }
 
-  private handleError<T> (operation = 'operation', result?: T) {
+  private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
       // TODO: send the error to remote logging infrastructure
