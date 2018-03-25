@@ -1,5 +1,5 @@
 ﻿import {Component} from '@angular/core';
-import {LoginService} from '../account/login/login.service';
+import {UserService} from '../account/user.service';
 
 @Component({
   selector: 'homePage',
@@ -12,7 +12,7 @@ export class HomePageComponent {
   pageTitle: string = 'HomePage';
   errorMessage: string;
 
-  constructor(private _loginService: LoginService) {
+  constructor(private _loginService: UserService) {
   }
 
   userInfo() {

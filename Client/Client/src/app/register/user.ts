@@ -1,5 +1,5 @@
 ﻿/* Defines the IUser entity */
-export interface IUser {
+export interface IRegisterUser {
 
     firstname: string;
     lastname: string;

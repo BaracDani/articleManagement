@@ -1,6 +1,6 @@
 ﻿import {Component} from '@angular/core';
-import {IUser} from './user';
-import {RegisterService} from './register.service';
+import {IRegisterUser} from './user';
+import {UserService} from '../account/user.service';
 
 @Component({
   selector: 'register',
@@ -12,7 +12,7 @@ export class RegisterComponent {
 
   pageTitle: string = 'Register';
 
-  user: IUser;
+  user: IRegisterUser;
   firstname: string;
   lastname: string;
   email: string;
@@ -22,7 +22,7 @@ export class RegisterComponent {
   registerMessage: string;
   errorMessage: string;
 
-  constructor(private _registerService: RegisterService) {
+  constructor(private _userService: UserService) {
 
     this.user = {
       firstname: "",
@@ -43,7 +43,7 @@ export class RegisterComponent {
       confirmPassword: this.confirmPassword
     };
 
-    this._registerService.register(this.user)
+    this._userService.register(this.user)
       .subscribe(
         response => this.onRegisterResponse(response),
         error => this.errorMessage = <any>error);
@@ -51,18 +51,7 @@ export class RegisterComponent {
 
   onRegisterResponse(response: any) {
     this.registerMessage = (response.isValid ? "Register with success!" : "Invalid data!")
-    if (response.isValid) {
-      localStorage.setItem('profile', JSON.stringify(response.profile));
-      localStorage.setItem('token', response.id_token);
-    }
-    else {
-      this.logout();
-    }
-  }
 
-  logout() {
-    localStorage.removeItem('profile');
-    localStorage.removeItem('token');
   }
 
 }
