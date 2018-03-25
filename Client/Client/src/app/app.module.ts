@@ -10,13 +10,16 @@ import {HomePageComponent} from './homePage/homePage.component';
 import {RegisterService} from './register/register.service';
 import {RegisterComponent} from './register/register.component';
 import {HttpClientModule} from '@angular/common/http';
+import {LoginComponent} from './account/login/login.component';
+import {LoginService} from './account/login/login.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -25,7 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [RegisterService],
+  providers: [RegisterService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -44,7 +44,6 @@ export class RegisterComponent {
             confirmPassword: this.confirmPassword
         };
 
-
         this._registerService.register(this.user)
             .subscribe(
             response => this.onRegisterResponse(response),

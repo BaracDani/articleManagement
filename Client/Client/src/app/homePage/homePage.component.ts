@@ -1,4 +1,5 @@
 ﻿import { Component } from '@angular/core';
+import {LoginService} from '../account/login/login.service';
 
 @Component({
     selector: 'homePage',
@@ -9,8 +10,18 @@
 export class HomePageComponent {
 
     pageTitle: string = 'HomePage';
+  errorMessage: string;
 
-    constructor() {
+    constructor(private _loginService: LoginService) {
     }
 
+	userInfo() {
+		this._loginService.userInfo()
+      .subscribe((result: any) => {
+    let res = result;
+    console.log(res);
+},(error: any) => {
+    this.errorMessage = error;
+});
+	}
 }

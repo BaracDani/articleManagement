@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using ApiService.Providers;
 using ApiService.Models;
+using Microsoft.Owin.Cors;
 
 namespace ApiService
 {
@@ -22,6 +23,9 @@ namespace ApiService
         // For more information on configuring authentication, please visit http://go.microsoft.com/fwlink/?LinkId=301864
         public void ConfigureAuth(IAppBuilder app)
         {
+            //enable cors
+            app.UseCors(CorsOptions.AllowAll);
+
             // Configure the db context and user manager to use a single instance per request
             app.CreatePerOwinContext(ApplicationDbContext.Create);
             app.CreatePerOwinContext<ApplicationUserManager>(ApplicationUserManager.Create);
@@ -64,6 +68,7 @@ namespace ApiService
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+
         }
     }
 }

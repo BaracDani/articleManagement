@@ -15,7 +15,7 @@ export class RegisterService {
 
   register(user: IUser): Observable<any> {
 
-    var creds = "firstname=" + user.firstname + "&lastname=" + user.lastname + "&email=" + user.email
+    let creds = "firstname=" + user.firstname + "&lastname=" + user.lastname + "&email=" + user.email
       + "&password=" + user.password + "&confirmPassword=" + user.confirmPassword;
     const headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
     //headers.append('Content-Type', 'application/x-www-form-urlencoded');
