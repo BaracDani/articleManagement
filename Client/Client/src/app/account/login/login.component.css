@@ -1,7 +1,15 @@
 ﻿.topLoginPage {
   background-size: cover;
   background-position: center;
+  height: 100%;
 }
+
+.bottomLoginPage {
+  background-color: #bdd979;
+  position: absolute;
+  width: 100%;
+}
+
 
 .appl {
   padding-top: 10px;
@@ -64,11 +72,6 @@
   font-size: 25pt;
   cursor: pointer;
 }
-
-.bottomLoginPage {
-  background-color: #bdd979;
-}
-
 .wirtekLogo {
   padding: 1%;
   width: 7%;
@@ -105,5 +108,4 @@ nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.act
 
 #about, #contact {
   color: #3A3A3A;
-  text-decoration: none;
 }

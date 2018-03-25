@@ -1,4 +1,5 @@
-﻿<div class="topLoginPage"
+﻿<div class="topLoginPage container-fluid " fxLayout="column"
+     fxLayoutAlign="center center"
      style="background: url('assets/images/backgr4.png') no-repeat;background-size:cover;background-position: center;">
 
   <div class="container">
@@ -19,7 +20,7 @@
         <div class="login">
           <input class="register-input" type="email" placeholder="Email address" [(ngModel)]="email"/><br/>
           <input class="register-input" type="password" placeholder="Password" [(ngModel)]="password"/><br/>
-          <div class="row">
+          <div fxLayout="row">
             <div id="radio" class="col-4">
               <input class="radio-button" type="radio" name="remember" value="remember"/><b> Remember Me</b>
             </div>
@@ -54,9 +55,11 @@
         <p style="padding-top:10px;">Developed by Daniel Barac. All rights reserved</p>
       </div>
       <div class="col-4">
-        <p class="about" align="right" style="padding-top:10px;"><b><a id="contact" href="">contact</a> | <a id="about"
-                                                                                                             href="">about
-          us</a></b></p>
+        <p class="about" align="right" style="padding-top:10px;">
+          <b>
+            <a id="contact" href="">contact</a> | <a id="about" href="">about us</a>
+          </b>
+        </p>
 
       </div>
 

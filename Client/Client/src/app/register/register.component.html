@@ -1,15 +1,8 @@
-﻿<div class="topLoginPage"
+﻿<div class="topLoginPage" fxLayout="column"
+     fxLayoutAlign="center center"
      style="background: url('assets/images/backgr4.png') no-repeat;background-size:cover;background-position: center;">
 
-  <div class="container">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4">
-        <div class="appl">Create account</div>
-      </div>
-      <div class="col-4"></div>
-    </div>
-  </div>
+  <div class="appl">Create account</div>
 
   <div class="container">
     <div class="row">
@@ -21,7 +14,7 @@
           <input class="register-input" type="text" placeholder="Last Name" [(ngModel)]="lastname"/><br/>
           <input class="register-input" type="email" placeholder="Email address" [(ngModel)]="email"/> <br/>
           <input class="register-input" type="password" placeholder="Password" [(ngModel)]="password"/><br/>
-          <input class="register-input" type="password" placeholder="Re-type password" [(ngModel)]="confirmPassword"/>
+          <input class="register-input" type="password" placeholder="Confirm password" [(ngModel)]="confirmPassword"/>
           <div>{{registerMessage}}</div>
         </div>
 

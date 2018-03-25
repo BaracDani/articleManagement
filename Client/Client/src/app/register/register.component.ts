@@ -1,69 +1,68 @@
-﻿
-import {Component} from '@angular/core';
+﻿import {Component} from '@angular/core';
 import {IUser} from './user';
 import {RegisterService} from './register.service';
 
 @Component({
-    selector: 'register',
-    templateUrl: './register.component.html',
-    styleUrls: ['./register.component.css'],
+  selector: 'register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css'],
 })
 
 export class RegisterComponent {
 
-    pageTitle: string = 'Register';
+  pageTitle: string = 'Register';
 
-    user: IUser;
-    firstname: string;
-    lastname: string;
-    email: string;
-    password: string;
-    confirmPassword: string;
+  user: IUser;
+  firstname: string;
+  lastname: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 
-    registerMessage: string;
-    errorMessage: string;
+  registerMessage: string;
+  errorMessage: string;
 
-    constructor(private _registerService: RegisterService) {
+  constructor(private _registerService: RegisterService) {
 
-        this.user = {
-            firstname: "",
-            lastname: "",
-            email: "",
-            password: "",
-            confirmPassword: ""
-        };
+    this.user = {
+      firstname: "",
+      lastname: "",
+      email: "",
+      password: "",
+      confirmPassword: ""
+    };
+  }
+
+  registerClick() {
+
+    this.user = {
+      firstname: this.firstname,
+      lastname: this.lastname,
+      email: this.email,
+      password: this.password,
+      confirmPassword: this.confirmPassword
+    };
+
+    this._registerService.register(this.user)
+      .subscribe(
+        response => this.onRegisterResponse(response),
+        error => this.errorMessage = <any>error);
+  }
+
+  onRegisterResponse(response: any) {
+    this.registerMessage = (response.isValid ? "Register with success!" : "Invalid data!")
+    if (response.isValid) {
+      localStorage.setItem('profile', JSON.stringify(response.profile));
+      localStorage.setItem('token', response.id_token);
     }
-
-    registerClick() {
-
-        this.user = {
-            firstname: this.firstname,
-            lastname: this.lastname,
-            email: this.email,
-            password: this.password,
-            confirmPassword: this.confirmPassword
-        };
-
-        this._registerService.register(this.user)
-            .subscribe(
-            response => this.onRegisterResponse(response),
-            error => this.errorMessage = <any>error);
+    else {
+      this.logout();
     }
+  }
 
-    onRegisterResponse(response: any) {
-        this.registerMessage = (response.isValid ? "Register with success!" : "Invalid data!")
-        if (response.isValid) {
-            localStorage.setItem('profile', JSON.stringify(response.profile));
-            localStorage.setItem('token', response.id_token);
-        }
-        else {
-            this.logout();
-        }
-    }
-
-    logout() {
-        localStorage.removeItem('profile');
-        localStorage.removeItem('token');
-    }
+  logout() {
+    localStorage.removeItem('profile');
+    localStorage.removeItem('token');
+  }
 
 }

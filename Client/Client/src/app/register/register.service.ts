@@ -21,10 +21,9 @@ export class RegisterService {
     //headers.append('Content-Type', 'application/x-www-form-urlencoded');
     //headers.append('Authorization', 'Basic 1234');
 
-    return this._http.post(this._registerUrl, creds, {headers: headers})
-      .map((response: Response) => <any>response.json()).pipe(
-        tap(_ => console.log(`regggg`)),
-        catchError(this.handleError<any>('register')));
+    return this._http.post(this._registerUrl, creds, {headers: headers}).pipe(
+      tap(_ => console.log(`User register`)),
+      catchError(this.handleError<any>('register')));
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

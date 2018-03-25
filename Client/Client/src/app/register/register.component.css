@@ -1,6 +1,11 @@
 ﻿.topLoginPage {
   background-size: cover;
   background-position: center;
+  height: 100%;
+}
+
+.bottomLoginPage {
+  background-color: #bdd979;
 }
 
 .appl {
@@ -73,10 +78,6 @@
   color: white;
   font-size: 25pt;
   cursor: pointer;
-}
-
-.bottomLoginPage {
-  background-color: #bdd979;
 }
 
 .wirtekLogo {

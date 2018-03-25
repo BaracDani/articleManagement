@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 import {AppComponent} from './app.component';
@@ -26,7 +27,8 @@ import {LoginService} from './account/login/login.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FlexLayoutModule
   ],
   providers: [RegisterService, LoginService],
   bootstrap: [AppComponent]
