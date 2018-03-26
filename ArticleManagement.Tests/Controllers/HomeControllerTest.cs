@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Service;
-using Service.Controllers;
+using ApiService;
+using ApiService.Controllers;
 
 namespace Service.Tests.Controllers
 {

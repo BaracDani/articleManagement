@@ -92,9 +92,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ArticleManagement\Service.csproj">
-      <Project>{E729697E-67DE-4B74-B2A0-B9598A354C22}</Project>
-      <Name>Service</Name>
+    <ProjectReference Include="..\ApiService\ApiService.csproj">
+      <Project>{2d250fcd-5b28-4b9e-8a10-f53c9765036a}</Project>
+      <Name>ApiService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

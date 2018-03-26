@@ -67,9 +67,8 @@ export class UserService {
 
   userInfo() {
     let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
-    let token = localStorage.getItem('token');
-    if (token) {
-      headers = headers.append('Authorization', 'Bearer ' + token);
+    if (this.isAuthenticated()) {
+      headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
     }
     let url = this.commonService.getBaseUrl() + '/api/account/userinfo';
     return this._http.get(url, {headers: headers}).pipe(
@@ -77,7 +76,17 @@ export class UserService {
       catchError(this.commonService.handleError<any>('userInfo')));
   }
 
-  logout(): void {
-    this.authProfile.resetProfile();
+  logout() {
+    let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    if (this.isAuthenticated()) {
+      headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    }
+
+    let url = this.commonService.getBaseUrl() + '/api/account/logout';
+
+    return this._http.post(url, null, {headers: headers}).pipe(
+      tap(_ => console.log(`Logout`)),
+      catchError(this.commonService.handleError<any>('logout')));
+
   }
 }

@@ -21,7 +21,8 @@ namespace ApiService.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DataAccess")
+            //: base("DataAccess")
+            : base("DefaultConnection")
         {
         }
         protected override void OnModelCreating(System.Data.Entity.DbModelBuilder modelBuilder)

@@ -18,13 +18,19 @@ export class AppComponent implements OnInit {
               private authProfile: UserProfile,
               private router: Router) {
   }
+
   ngOnInit(): void {
     this.Profile = this.authProfile.userProfile;
   }
 
   logOut(): void {
-    this.authService.logout();
+    this.authService.logout().subscribe(
+      response => {
+        this.authProfile.resetProfile();
+        this.router.navigateByUrl('/login');
+      },
+      error => {
+      });
 
-    this.router.navigateByUrl('/login');
   }
 }

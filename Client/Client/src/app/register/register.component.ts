@@ -50,7 +50,7 @@ export class RegisterComponent {
   }
 
   onRegisterResponse(response: any) {
-    this.registerMessage = (response.isValid ? "Register with success!" : "Invalid data!")
+    this.registerMessage = "Register with success!";
 
   }
 
