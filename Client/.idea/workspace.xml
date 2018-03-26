@@ -2,23 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44c5f42d-e0c1-49c4-ab6c-454a8f42fc74" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin.model.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin.service.ts" />
-      <change beforePath="$PROJECT_DIR$/../ApiService/Controllers/AccountController.cs" afterPath="$PROJECT_DIR$/../ApiService/Controllers/AccountController.cs" />
-      <change beforePath="$PROJECT_DIR$/../ApiService/Providers/ApplicationOAuthProvider.cs" afterPath="$PROJECT_DIR$/../ApiService/Providers/ApplicationOAuthProvider.cs" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/account/user.model.ts" afterPath="$PROJECT_DIR$/Client/src/app/account/user.model.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/account/user.module.ts" afterPath="$PROJECT_DIR$/Client/src/app/account/user.module.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/account/user.profile.ts" afterPath="$PROJECT_DIR$/Client/src/app/account/user.profile.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/account/user.service.ts" afterPath="$PROJECT_DIR$/Client/src/app/account/user.service.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/Client/src/app/app-routing.module.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/app.component.html" afterPath="$PROJECT_DIR$/Client/src/app/app.component.html" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/app.component.ts" afterPath="$PROJECT_DIR$/Client/src/app/app.component.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Client/src/app/app.module.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html" afterPath="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html" />
+      <change beforePath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css" />
+      <change beforePath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,14 +45,44 @@
       <file leaf-file-name="admin-page.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+            <state relative-caret-position="0">
+              <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user.profile.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homePage.component.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/app/homePage/homePage.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="2" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin-page.component.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.profile.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/app/account/user.profile.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="295">
@@ -160,7 +176,6 @@
         <option value="$PROJECT_DIR$/Client/src/app/account/login/IAccount.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/register/register.service.ts" />
-        <option value="$PROJECT_DIR$/Client/src/styles.css" />
         <option value="$PROJECT_DIR$/Client/src/app/account/login/login.component.css" />
         <option value="$PROJECT_DIR$/Client/src/app/account/login/login.component.html" />
         <option value="$PROJECT_DIR$/Client/src/app/register/register.component.css" />
@@ -188,8 +203,10 @@
         <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/admin/admin.model.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/admin/admin.service.ts" />
-        <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" />
         <option value="$PROJECT_DIR$/Client/src/app/account/user.profile.ts" />
+        <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" />
+        <option value="$PROJECT_DIR$/Client/src/styles.css" />
+        <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css" />
       </list>
     </option>
   </component>
@@ -350,12 +367,12 @@
       <workItem from="1521745899324" duration="2880000" />
       <workItem from="1521971134987" duration="6607000" />
       <workItem from="1522001404233" duration="7909000" />
-      <workItem from="1522069501228" duration="8396000" />
+      <workItem from="1522069501228" duration="9917000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51841000" />
+    <option name="totallyTimeSpent" value="53362000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -543,13 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/account/login/login.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1887">
@@ -636,14 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/register/register.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="920">
@@ -661,22 +663,6 @@
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/homePage/homePage.component.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="8" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -752,6 +738,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/account/user.profile.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/homePage/homePage.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="12" lean-forward="true" selection-start-line="0" selection-start-column="12" selection-end-line="2" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="38" lean-forward="false" selection-start-line="0" selection-start-column="38" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -762,21 +790,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html">
+    <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        <state relative-caret-position="120">
+          <caret line="6" column="27" lean-forward="false" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/account/user.profile.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="49" column="36" lean-forward="false" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

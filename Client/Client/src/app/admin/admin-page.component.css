@@ -1,0 +1,9 @@
+.list-group-item.active {
+  background-color: #bdd979;
+  border-color: #bdd979;
+}
+
+.admin-page {
+  background-color: #f8f9fa;
+  height: 100%;
+}

@@ -1,11 +1,20 @@
-<div class="container-fluid home-page" fxLayout="column">
+<div class="container-fluid admin-page" fxLayout="column">
   <div>
     <div>
-      <ul>
-        <li *ngFor="let user of userList">
-          {{ user.fullName }}
-        </li>
-      </ul>
+      <div class="list-group">
+        <a class="list-group-item active" fxLayout="row">
+          <span fxFlex="20%">Name</span>
+          <span fxFlex="20%">Email</span>
+          <span fxFlex="20%">Roles</span>
+          <span fxFlex="20%">Edit</span>
+        </a>
+        <a fxLayout="row" href="#" class="list-group-item list-group-item-action" *ngFor="let user of userList">
+          <span fxFlex="20%">{{user.fullName}}</span>
+          <span fxFlex="20%">{{user.email}}</span>
+          <span fxFlex="20%"><b *ngFor="let role of user.roles">{{role}}</b></span>
+          <span fxFlex="20%" class="badge badge-default badge-pill">Edit</span>
+        </a>
+      </div>
     </div>
   </div>
 </div>
