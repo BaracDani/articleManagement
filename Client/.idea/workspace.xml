@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44c5f42d-e0c1-49c4-ab6c-454a8f42fc74" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Controllers/BaseApiController.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Controllers/RolesController.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Infrastructure/ModelFactory.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Migrations/201803261359015_InitialCreate.Designer.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Migrations/201803261359015_InitialCreate.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Migrations/201803261359015_InitialCreate.resx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Migrations/Configuration.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Models/RoleBindingModels.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../ApiService/Services/EmailService.cs" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/ApiService.csproj" afterPath="$PROJECT_DIR$/../ApiService/ApiService.csproj" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/App_Start/IdentityConfig.cs" afterPath="$PROJECT_DIR$/../ApiService/App_Start/IdentityConfig.cs" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/App_Start/Startup.Auth.cs" afterPath="$PROJECT_DIR$/../ApiService/App_Start/Startup.Auth.cs" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/Controllers/AccountController.cs" afterPath="$PROJECT_DIR$/../ApiService/Controllers/AccountController.cs" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/Models/AccountBindingModels.cs" afterPath="$PROJECT_DIR$/../ApiService/Models/AccountBindingModels.cs" />
       <change beforePath="$PROJECT_DIR$/../ApiService/Models/IdentityModels.cs" afterPath="$PROJECT_DIR$/../ApiService/Models/IdentityModels.cs" />
-      <change beforePath="$PROJECT_DIR$/../ArticleManagement.Tests/ArticleManagement.Tests.csproj" afterPath="$PROJECT_DIR$/../ArticleManagement.Tests/ArticleManagement.Tests.csproj" />
-      <change beforePath="$PROJECT_DIR$/../ArticleManagement.Tests/Controllers/HomeControllerTest.cs" afterPath="$PROJECT_DIR$/../ArticleManagement.Tests/Controllers/HomeControllerTest.cs" />
-      <change beforePath="$PROJECT_DIR$/../ArticleManagement.sln" afterPath="$PROJECT_DIR$/../ArticleManagement.sln" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/Web.config" afterPath="$PROJECT_DIR$/../ApiService/Web.config" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/packages.config" afterPath="$PROJECT_DIR$/../ApiService/packages.config" />
+      <change beforePath="$PROJECT_DIR$/../ArticleManagement.Tests/App.config" afterPath="$PROJECT_DIR$/../ArticleManagement.Tests/App.config" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/account/user.service.ts" afterPath="$PROJECT_DIR$/Client/src/app/account/user.service.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/app.component.ts" afterPath="$PROJECT_DIR$/Client/src/app/app.component.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/register/register.component.ts" afterPath="$PROJECT_DIR$/Client/src/app/register/register.component.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -325,12 +338,12 @@
       <workItem from="1521745899324" duration="2880000" />
       <workItem from="1521971134987" duration="6607000" />
       <workItem from="1522001404233" duration="7909000" />
-      <workItem from="1522069501228" duration="3180000" />
+      <workItem from="1522069501228" duration="3767000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46625000" />
+    <option name="totallyTimeSpent" value="47212000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
