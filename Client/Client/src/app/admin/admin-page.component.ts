@@ -13,6 +13,7 @@ export class AdminPageComponent implements OnInit {
   pageTitle: string = 'AdminPage';
   errorMessage: string;
   userList: IUserModel[] = [];
+  displayedColumns = ['fullName', 'email'];
 
   constructor(private adminService: AdminService) {
   }

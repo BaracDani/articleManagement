@@ -13,6 +13,7 @@ import {CommonService} from './core/repository/common.service';
 import {UserModule} from './account/user.module';
 import {AdminPageComponent} from './admin/admin-page.component';
 import {AdminService} from './admin/admin.service';
+import {AngularMaterialModule} from './angular-material.module';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {AdminService} from './admin/admin.service';
     HttpClientModule,
     AppRoutingModule,
     FlexLayoutModule,
-    UserModule
+    UserModule,
+    AngularMaterialModule
   ],
   providers: [CommonService, AdminService],
   bootstrap: [AppComponent]
