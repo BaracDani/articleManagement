@@ -3,12 +3,13 @@ import { Router } from '@angular/router';
 import {IProfile} from './user.model'
 
 @Injectable()
-export class UserProfile {
+export class UserProfileService {
   userProfile: IProfile = {
     token: "",
     expiration: "",
     currentUser: { id: '', userName: '', email: '' },
-    claims: null
+    claims: null,
+    roles: null
   };
   constructor(private router: Router) {
   }
@@ -19,13 +20,14 @@ export class UserProfile {
     //var email = profile.claims.filter(p => p.type == 'email')[0].value;
     sessionStorage.setItem('access_token', profile.access_token);
     sessionStorage.setItem('expires_in', profile[".expires"]);
-    //sessionStorage.setItem('nameid', nameid);
     sessionStorage.setItem('userName', profile.userName);
+    sessionStorage.setItem('roles', JSON.stringify(profile.roles));
     //sessionStorage.setItem('email', email);
+    //sessionStorage.setItem('nameid', nameid);
   }
 
   getProfile(authorizationOnly: boolean = false): IProfile {
-    var accessToken = sessionStorage.getItem('access_token');
+    let accessToken = sessionStorage.getItem('access_token');
 
     if (accessToken) {
       this.userProfile.token = accessToken;
@@ -33,8 +35,9 @@ export class UserProfile {
       if (this.userProfile.currentUser == null) {
         this.userProfile.currentUser = { id: '', userName: '', email: '' }
       }
-      this.userProfile.currentUser.id = sessionStorage.getItem('nameid');
+      //this.userProfile.currentUser.id = sessionStorage.getItem('nameid');
       this.userProfile.currentUser.userName = sessionStorage.getItem('userName');
+      this.userProfile.roles = JSON.parse(sessionStorage.getItem('roles'));
     }
 
     return this.userProfile;
@@ -43,11 +46,14 @@ export class UserProfile {
   resetProfile(): IProfile {
     sessionStorage.removeItem('access_token');
     sessionStorage.removeItem('expires_in');
+    sessionStorage.removeItem('userName');
+    sessionStorage.removeItem('roles');
     this.userProfile = {
       token: "",
       expiration: "",
       currentUser: null,
-      claims: null
+      claims: null,
+      roles: null
     };
     return this.userProfile;
   }

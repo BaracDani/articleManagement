@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {IProfile} from './account/user.model';
 import {UserService} from './account/user.service';
-import {UserProfile} from './account/user.profile';
+import {UserProfileService} from './account/user.profile';
 import {Router} from '@angular/router';
 
 @Component({
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   Profile: IProfile;
 
   constructor(private authService: UserService,
-              private authProfile: UserProfile,
+              private authProfile: UserProfileService,
               private router: Router) {
   }
 

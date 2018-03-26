@@ -14,4 +14,5 @@ export interface IProfile {
   expiration: string;
   claims: IClaim[];
   currentUser: IUser;
+  roles: string[];
 }

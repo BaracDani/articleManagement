@@ -18,6 +18,9 @@
       <li class="nav-item" *ngIf="!authService.isAuthenticated()">
         <a class="nav-link" routerLink="/register">Register</a>
       </li>
+      <li class="nav-item" *ngIf="authService.isUserAdmin()">
+        <a class="nav-link" routerLink="/admin">Admin</a>
+      </li>
       <li class="nav-item" *ngIf="authService.isAuthenticated()">
         <a class="nav-link" (click)="logOut()">Log Out</a>
       </li>

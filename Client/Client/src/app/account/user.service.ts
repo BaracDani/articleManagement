@@ -5,7 +5,7 @@ import {Observable} from 'rxjs/Observable';
 import {catchError, tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {CommonService} from '../core/repository/common.service';
-import {UserProfile} from './user.profile';
+import {UserProfileService} from './user.profile';
 import {IRegisterUser} from '../register/user';
 
 @Injectable()
@@ -14,7 +14,7 @@ export class UserService {
 
   constructor(private _http: HttpClient,
               private router: Router,
-              private authProfile: UserProfile,
+              private authProfile: UserProfileService,
               private commonService: CommonService) {
 
   }
@@ -33,6 +33,22 @@ export class UserService {
     return validToken && !isTokenExpired;
   }
 
+  isUserAdmin() {
+    let profile = this.authProfile.getProfile();
+    let validToken = profile.token != "" && profile.token != null;
+    let isTokenExpired = this.isTokenExpired(profile);
+    let isAdmin: boolean = false;
+    if (profile && profile.roles && profile.roles.length > 0) {
+      profile.roles.forEach((role: string) => {
+          if (role === 'Admin') {
+            isAdmin = true;
+          }
+        }
+      );
+    }
+    return validToken && !isTokenExpired && isAdmin;
+  }
+
   isTokenExpired(profile: IProfile) {
     let expiration = new Date(profile.expiration)
     return expiration < new Date();
@@ -47,6 +63,7 @@ export class UserService {
       .map((response: IProfile) => {
         //var userProfile: IProfile = response.json();
         let userProfile: IProfile = response;
+        userProfile.roles = eval('(' + response.roles + ')');
         this.authProfile.setProfile(userProfile);
         return response;
       }).pipe(tap(_ => console.log(`Log Login`)),

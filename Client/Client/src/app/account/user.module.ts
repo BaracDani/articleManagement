@@ -8,7 +8,7 @@ import {RouterModule} from '@angular/router';
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from './auth.guard';
 import {UserService} from './user.service';
-import {UserProfile} from './user.profile'
+import {UserProfileService} from './user.profile'
 import {RegisterComponent} from '../register/register.component';
 
 @NgModule({
@@ -28,7 +28,7 @@ import {RegisterComponent} from '../register/register.component';
   providers: [
     UserService,
     AuthGuard,
-    UserProfile
+    UserProfileService
   ]
 })
 export class UserModule {

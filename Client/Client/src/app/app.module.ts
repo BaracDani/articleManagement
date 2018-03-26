@@ -5,18 +5,21 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 import {AppComponent} from './app.component';
-import {AppRoutingModule} from './/app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import {AlertModule} from 'ngx-bootstrap';
 import {HomePageComponent} from './homePage/homePage.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonService} from './core/repository/common.service';
 import {UserModule} from './account/user.module';
+import {AdminPageComponent} from './admin/admin-page.component';
+import {AdminService} from './admin/admin.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
+    AdminPageComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -27,7 +30,7 @@ import {UserModule} from './account/user.module';
     FlexLayoutModule,
     UserModule
   ],
-  providers: [CommonService],
+  providers: [CommonService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
