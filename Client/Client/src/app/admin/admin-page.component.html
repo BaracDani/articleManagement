@@ -7,36 +7,29 @@
           <!--- Note that these columns can be defined in any order.
                 The actual rendered columns are set as a property on the row definition" -->
 
-          <!-- Name Column -->
           <ng-container matColumnDef="fullName">
-            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.fullName}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef> Name</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.fullName}}</mat-cell>
           </ng-container>
 
-          <!-- Weight Column -->
           <ng-container matColumnDef="email">
-            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            <mat-header-cell *matHeaderCellDef> Email</mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.email}}</mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="action">
+            <mat-header-cell *matHeaderCellDef> Action</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+              <div>
+                <mat-icon>edit</mat-icon>
+              </div>
+            </mat-cell>
           </ng-container>
 
           <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
           <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
         </mat-table>
       </div>
-      <!--<div class="list-group">-->
-        <!--<a class="list-group-item active" fxLayout="row">-->
-          <!--<span fxFlex="20%">Name</span>-->
-          <!--<span fxFlex="20%">Email</span>-->
-          <!--<span fxFlex="20%">Roles</span>-->
-          <!--<span fxFlex="20%">Edit</span>-->
-        <!--</a>-->
-        <!--<a fxLayout="row" href="#" class="list-group-item list-group-item-action" *ngFor="let user of userList">-->
-          <!--<span fxFlex="20%">{{user.fullName}}</span>-->
-          <!--<span fxFlex="20%">{{user.email}}</span>-->
-          <!--<span fxFlex="20%"><b *ngFor="let role of user.roles">{{role}}</b></span>-->
-          <!--<span fxFlex="20%" class="badge badge-default badge-pill">Edit</span>-->
-        <!--</a>-->
-      <!--</div>-->
     </div>
   </div>
 </div>

@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44c5f42d-e0c1-49c4-ab6c-454a8f42fc74" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/Client/src/app/angular-material.module.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/Client/src/app/app-material-theme.scss" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Client/.angular-cli.json" afterPath="$PROJECT_DIR$/Client/.angular-cli.json" />
-      <change beforePath="$PROJECT_DIR$/Client/package-lock.json" afterPath="$PROJECT_DIR$/Client/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/Client/package.json" afterPath="$PROJECT_DIR$/Client/package.json" />
       <change beforePath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" />
       <change beforePath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts" afterPath="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Client/src/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/Client/src/app/angular-material.module.ts" afterPath="$PROJECT_DIR$/Client/src/app/angular-material.module.ts" />
+      <change beforePath="$PROJECT_DIR$/Client/src/index.html" afterPath="$PROJECT_DIR$/Client/src/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,8 +33,8 @@
       <file leaf-file-name="admin-page.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+            <state relative-caret-position="160">
+              <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -47,21 +43,21 @@
       <file leaf-file-name="admin-page.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-              <folding />
+            <state relative-caret-position="280">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angular-material.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/app/angular-material.module.ts">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="180">
+              <caret line="9" column="88" lean-forward="false" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,7 +104,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Client/package.json" />
-        <option value="$PROJECT_DIR$/Client/src/index.html" />
         <option value="$PROJECT_DIR$/Client/src/app/app.component.css" />
         <option value="$PROJECT_DIR$/Client/src/app/core/repository/connection-constants.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/account/login/IAccount.ts" />
@@ -141,13 +136,14 @@
         <option value="$PROJECT_DIR$/Client/src/app/admin/admin.service.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/account/user.profile.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.css" />
-        <option value="$PROJECT_DIR$/Client/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Client/.angular-cli.json" />
         <option value="$PROJECT_DIR$/Client/src/styles.css" />
         <option value="$PROJECT_DIR$/Client/src/app/app-material-theme.scss" />
+        <option value="$PROJECT_DIR$/Client/src/index.html" />
+        <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts" />
+        <option value="$PROJECT_DIR$/Client/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/angular-material.module.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html" />
-        <option value="$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts" />
       </list>
     </option>
   </component>
@@ -292,12 +288,12 @@
       <workItem from="1521745899324" duration="2880000" />
       <workItem from="1521971134987" duration="6607000" />
       <workItem from="1522001404233" duration="7909000" />
-      <workItem from="1522069501228" duration="12705000" />
+      <workItem from="1522069501228" duration="14989000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56150000" />
+    <option name="totallyTimeSpent" value="58434000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -337,13 +333,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Client/src/main.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -431,14 +420,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="54" lean-forward="false" selection-start-line="0" selection-start-column="54" selection-end-line="0" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="15" column="201" lean-forward="false" selection-start-line="15" selection-start-column="201" selection-end-line="15" selection-end-column="201" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -628,14 +609,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-120">
-          <caret line="15" column="39" lean-forward="false" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/node_modules/@angular/material/prebuilt-themes/purple-green.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-840">
@@ -692,10 +665,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/node_modules/@angular/material/icon/typings/icon-registry.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="29" column="21" lean-forward="false" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="88" lean-forward="false" selection-start-line="9" selection-start-column="88" selection-end-line="9" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="15" column="64" lean-forward="false" selection-start-line="15" selection-start-column="64" selection-end-line="15" selection-end-column="64" />
+          <folding>
+            <element signature="e#167#221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/angular-material.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="3" column="53" lean-forward="false" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -710,18 +719,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="31" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/admin/admin-page.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="47" lean-forward="true" selection-start-line="18" selection-start-column="47" selection-end-line="18" selection-end-column="47" />
+        <state relative-caret-position="160">
+          <caret line="23" column="26" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding />
         </state>
       </provider>
