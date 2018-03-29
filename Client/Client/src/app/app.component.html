@@ -31,6 +31,7 @@
   <mat-toolbar color="primary" class="app-toolbar">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="app-name">{{pageTitle}}</h1>
+    <span fxFlex></span>
     <span *ngIf="authService.isAuthenticated()">Welcome {{ Profile.currentUser.userName }}</span>
   </mat-toolbar>
 
