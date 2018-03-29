@@ -6,7 +6,7 @@ import {catchError, tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {CommonService} from '../core/repository/common.service';
 import {UserProfileService} from './user.profile';
-import {IRegisterUser} from '../register/user';
+import {IRegisterUser} from '../register/user';import 'rxjs/add/operator/finally';
 
 @Injectable()
 export class UserService {
