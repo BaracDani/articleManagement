@@ -1,69 +1,24 @@
-﻿<div class="topLoginPage container-fluid " fxLayout="column"
-     fxLayoutAlign="center center"
-     style="background: url('assets/images/backgr4.png') no-repeat;background-size:cover;background-position: center;">
-
-  <div class="container">
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4">
-        <div class="appl">Log in</div>
+﻿<div class="login-container" fxLayout="row" fxLayoutAlign="center center">
+  <div fxFlex="30%" fxLayout="column">
+    <mat-form-field>
+      <input matInput class="register-input" type="email" placeholder="Email address" [(ngModel)]="email"/><br/>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput class="register-input" type="password" placeholder="Password" [(ngModel)]="password"/><br/>
+    </mat-form-field>
+    <div fxLayout="row">
+      <div>
+        <mat-checkbox color="primary" style="line-height: 43px;">Remember me</mat-checkbox>
       </div>
-      <div class="col-4"></div>
+      <span fxFlex></span>
+      <div>
+        <a mat-button class="forget-link" href=""><b>Forgot password?</b></a>
+      </div>
+    </div>
+    <div style="text-align: end">{{loginMessage}}</div>
+    <div class="row" fxLayoutAlign="center center">
+      <button color="primary" mat-button (click)="loginClick()">Login</button>
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-1"></div>
-      <div class="col-10">
-
-        <div class="login">
-          <input class="register-input" type="email" placeholder="Email address" [(ngModel)]="email"/><br/>
-          <input class="register-input" type="password" placeholder="Password" [(ngModel)]="password"/><br/>
-          <div fxLayout="row">
-            <div id="radio" class="col-4">
-              <input class="radio-button" type="radio" name="remember" value="remember"/><b> Remember Me</b>
-            </div>
-            <div class="col-4">{{loginMessage}}</div>
-            <div id="forgot" class="col-4">
-              <a class="forgot" href=""><b>Forgot password?</b></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-1"></div>
-    </div>
-
-    <div class="row">
-      <div class="col-4"></div>
-      <div class="col-4 register-container">
-        <button type="button" id="thick1" aria-hidden="true" (click)="loginClick()">Login</button>
-      </div>
-      <div class="col-4"></div>
-    </div>
-  </div>
-
-
-</div>
-
-<div class="bottomLoginPage">
-
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-8">
-        <p style="padding-top:10px;">Developed by Daniel Barac. All rights reserved</p>
-      </div>
-      <div class="col-4">
-        <p class="about" align="right" style="padding-top:10px;">
-          <b>
-            <a id="contact" href="">contact</a> | <a id="about" href="">about us</a>
-          </b>
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
 </div>

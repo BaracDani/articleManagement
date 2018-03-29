@@ -1,6 +1,7 @@
 ﻿import {Component} from '@angular/core';
-import {UserService} from '../user.service';
 import {Router} from '@angular/router';
+
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'login',
@@ -12,6 +13,7 @@ export class LoginComponent {
 
   pageTitle: string = 'Login';
 
+  //model
   email: string;
   password: string;
 
@@ -46,5 +48,4 @@ export class LoginComponent {
   onLoginResponse(response: any) {
     this.loginMessage = (response.access_token ? "Login with success!" : "Invalid data!");
   }
-
 }
