@@ -1,6 +1,8 @@
 <h1 mat-dialog-title>Edit User {{data.user.email}}</h1>
 <div mat-dialog-content>
   <div class="autocomplete-container">
+    <div>Current roles: <span *ngFor="let role of data.user.roles; let last = last;">{{role}}
+      <span *ngIf="!last">,</span></span></div>
     <mat-form-field>
       <input cdkFocusInitial type="text" placeholder="Select Role" aria-label="Roles" matInput
              [formControl]="rolesControl"

@@ -56,7 +56,7 @@ export class EditUserDialog {
       id: this.rolesControl.value.id,
       removedUser: this.data.user.id
     };
-    
+
     this.adminService.manageUserRole(data).subscribe((_) => {
 
       this.dialogRef.close();
