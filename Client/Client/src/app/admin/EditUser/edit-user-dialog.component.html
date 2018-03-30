@@ -1,16 +1,21 @@
 <h1 mat-dialog-title>Edit User {{data.user.email}}</h1>
 <div mat-dialog-content>
-  <mat-form-field>
-    <input type="text" placeholder="Select Role" aria-label="Roles" matInput [formControl]="rolesControl"
-           [matAutocomplete]="auto">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredRoles | async" [value]="option.name">
-        {{ option.name }}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
+  <div class="autocomplete-container">
+    <mat-form-field>
+      <input cdkFocusInitial type="text" placeholder="Select Role" aria-label="Roles" matInput
+             [formControl]="rolesControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let option of filteredRoles | async" [value]="option">
+          {{ option.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+  <span>{{errorMessage}}</span>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  <button mat-raised-button color="accent" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onAddRole()">Add Role</button>
+  <button mat-raised-button color="warn" (click)="onRemoveRole()" [mat-dialog-close]="data">Remove Role</button>
 </div>
