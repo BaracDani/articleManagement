@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-import {FormsModule} from '@angular/forms'; // <-- NgModel lives here
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel lives here
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -15,18 +15,21 @@ import {UserModule} from './account/user.module';
 import {AdminPageComponent} from './admin/admin-page.component';
 import {AdminService} from './admin/admin.service';
 import {AngularMaterialModule} from './angular-material.module';
+import {EditUserDialog} from './admin/EditUser/edit-user-dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    EditUserDialog
   ],
   imports: [
     AlertModule.forRoot(),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     FlexLayoutModule,
@@ -35,6 +38,7 @@ import {AngularMaterialModule} from './angular-material.module';
     LayoutModule,
     BrowserAnimationsModule
   ],
+  entryComponents: [EditUserDialog],
   providers: [CommonService, AdminService],
   bootstrap: [AppComponent]
 })

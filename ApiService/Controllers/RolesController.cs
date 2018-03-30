@@ -31,7 +31,7 @@ namespace ApiService.Controllers
         [Route("", Name = "GetAllRoles")]
         public IHttpActionResult GetAllRoles()
         {
-            var roles = this.AppRoleManager.Roles;
+            var roles = this.AppRoleManager.Roles.ToList();
 
             return Ok(roles);
         }
@@ -131,6 +131,62 @@ namespace ApiService.Controllers
                     ModelState.AddModelError("", String.Format("User: {0} could not be removed from role", user));
                 }
             }
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            return Ok();
+        }
+
+
+        [Route("ManageUserInRole")]
+        public async Task<IHttpActionResult> ManageUserInRole(UserInRoleModel model)
+        {
+            var role = await this.AppRoleManager.FindByIdAsync(model.Id);
+
+            if (role == null)
+            {
+                ModelState.AddModelError("", "Role does not exist");
+                return BadRequest(ModelState);
+            }
+
+            var user = model.EnrolledUser;
+            
+            var appUser = await this.AppUserManager.FindByIdAsync(user);
+
+            if (appUser == null)
+            {
+                ModelState.AddModelError("", String.Format("User: {0} does not exists", user));
+            }
+
+            if (!this.AppUserManager.IsInRole(user, role.Name))
+            {
+                IdentityResult result = await this.AppUserManager.AddToRoleAsync(user, role.Name);
+
+                if (!result.Succeeded)
+                {
+                    ModelState.AddModelError("", String.Format("User: {0} could not be added to role", user));
+                }
+
+            }
+
+            user = model.RemovedUser;
+            appUser = await this.AppUserManager.FindByIdAsync(user);
+
+            if (appUser == null)
+            {
+                ModelState.AddModelError("", String.Format("User: {0} does not exists", user));
+            }
+
+            IdentityResult resultRemove = await this.AppUserManager.RemoveFromRoleAsync(user, role.Name);
+
+            if (!resultRemove.Succeeded)
+            {
+                ModelState.AddModelError("", String.Format("User: {0} could not be removed from role", user));
+            }
+            
 
             if (!ModelState.IsValid)
             {

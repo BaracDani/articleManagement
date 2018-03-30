@@ -8,6 +8,8 @@ import {MatButtonModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule],
+    MatCheckboxModule,
+    MatDialogModule,
+    MatAutocompleteModule],
   exports: [MatListModule,
     MatTableModule,
     MatIconModule,
@@ -28,7 +32,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule]
+    MatCheckboxModule,
+    MatDialogModule,
+    MatAutocompleteModule]
 })
 export class AngularMaterialModule {
 }

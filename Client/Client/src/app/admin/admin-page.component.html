@@ -21,7 +21,7 @@
             <mat-header-cell *matHeaderCellDef> Action</mat-header-cell>
             <mat-cell *matCellDef="let element">
               <div>
-                <mat-icon>edit</mat-icon>
+                <button mat-button><mat-icon (click)="editUser(element)">edit</mat-icon></button>
               </div>
             </mat-cell>
           </ng-container>

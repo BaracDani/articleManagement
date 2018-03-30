@@ -6,3 +6,8 @@ export interface IUserModel {
   joinDate: string;
   roles: string[];
 }
+
+export interface IUserRole {
+  id: string;
+  name: string;
+}

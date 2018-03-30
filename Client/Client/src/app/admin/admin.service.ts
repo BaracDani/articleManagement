@@ -5,7 +5,7 @@ import {CommonService} from '../core/repository/common.service';
 import {Observable} from 'rxjs/Observable';
 import {catchError, tap} from 'rxjs/operators';
 import {UserProfileService} from '../account/user.profile';
-import {IUserModel} from './admin.model';
+import {IUserModel, IUserRole} from './admin.model';
 
 @Injectable()
 export class AdminService {
@@ -26,5 +26,16 @@ export class AdminService {
     return this._http.get(url, {headers: headers}).pipe(
       tap(_ => console.log(`Get users`)),
       catchError(this.commonService.handleError<any>('getUsers')));
+  }
+
+  getRoles(): Observable<IUserRole[]> {
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/roles';
+
+    return this._http.get(url, {headers: headers}).pipe(
+      tap(_ => console.log(`Get roles`)),
+      catchError(this.commonService.handleError<any>('getRoles')));
   }
 }

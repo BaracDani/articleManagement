@@ -22,4 +22,11 @@ namespace ApiService.Models
         public List<string> EnrolledUsers { get; set; }
         public List<string> RemovedUsers { get; set; }
     }
+    public class UserInRoleModel
+    {
+
+        public string Id { get; set; }
+        public string EnrolledUser { get; set; }
+        public string RemovedUser { get; set; }
+    }
 }
