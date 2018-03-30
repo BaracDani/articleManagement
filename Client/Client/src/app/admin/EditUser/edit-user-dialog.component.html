@@ -1,10 +1,10 @@
-<h1 mat-dialog-title>Hi {{data.user.email}}</h1>
+<h1 mat-dialog-title>Edit User {{data.user.email}}</h1>
 <div mat-dialog-content>
   <mat-form-field>
-    <input type="text" placeholder="Select Role" aria-label="Roles" matInput [formControl]="myControl"
+    <input type="text" placeholder="Select Role" aria-label="Roles" matInput [formControl]="rolesControl"
            [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredRoles | async" [value]="option.id">
+      <mat-option *ngFor="let option of filteredRoles | async" [value]="option.name">
         {{ option.name }}
       </mat-option>
     </mat-autocomplete>

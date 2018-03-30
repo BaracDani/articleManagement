@@ -10,7 +10,7 @@ import {map} from 'rxjs/operators/map';
   templateUrl: './edit-user-dialog.component.html',
 })
 export class EditUserDialog {
-  myControl: FormControl = new FormControl();
+  rolesControl: FormControl = new FormControl();
   filteredRoles: Observable<string[]>;
 
   constructor(
@@ -18,7 +18,7 @@ export class EditUserDialog {
     @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
-    this.filteredRoles = this.myControl.valueChanges.pipe(
+    this.filteredRoles = this.rolesControl.valueChanges.pipe(
       startWith(''),
       map(val => this.filter(val))
     );
