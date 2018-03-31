@@ -61,7 +61,7 @@ export class EditUserDialog {
 
       this.dialogRef.close();
     }, (error: any) => {
-      this.errorMessage = error;
+      this.errorMessage = error.error.message;
     });
   }
 

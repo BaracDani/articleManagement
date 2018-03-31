@@ -1,8 +1,8 @@
 <h1 mat-dialog-title>Edit User {{data.user.email}}</h1>
 <div mat-dialog-content>
   <div class="autocomplete-container">
-    <div>Current roles: <span *ngFor="let role of data.user.roles; let last = last;">{{role}}
-      <span *ngIf="!last">,</span></span></div>
+    <div>Current roles: <span *ngFor="let role of data.user.roles; let last = last;">
+      {{role}}<span *ngIf="!last">, </span></span></div>
     <mat-form-field>
       <input cdkFocusInitial type="text" placeholder="Select Role" aria-label="Roles" matInput
              [formControl]="rolesControl"
@@ -19,5 +19,5 @@
 <div mat-dialog-actions>
   <button mat-raised-button color="accent" (click)="onCancel()">Cancel</button>
   <button mat-raised-button color="primary" (click)="onAddRole()">Add Role</button>
-  <button mat-raised-button color="warn" (click)="onRemoveRole()" [mat-dialog-close]="data">Remove Role</button>
+  <button mat-raised-button color="warn" (click)="onRemoveRole()">Remove Role</button>
 </div>

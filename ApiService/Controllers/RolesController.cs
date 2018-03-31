@@ -35,7 +35,7 @@ namespace ApiService.Controllers
 
             return Ok(roles);
         }
-
+        
         [Route("create")]
         public async Task<IHttpActionResult> Create(CreateRoleBindingModel model)
         {

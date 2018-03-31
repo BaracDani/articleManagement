@@ -46,7 +46,12 @@ export class AdminPageComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-
+      this.adminService.getUsers()
+        .subscribe((result: IUserModel[]) => {
+          this.userList = result;
+        }, (error: any) => {
+          this.errorMessage = error;
+        });
     });
   }
 }
