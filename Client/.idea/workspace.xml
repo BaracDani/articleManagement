@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44c5f42d-e0c1-49c4-ab6c-454a8f42fc74" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/../ApiService/ApiService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ApiService/ApiService.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ApiService/App_Start/UnityConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ApiService/App_Start/UnityConfig.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Business/Business.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../Business/Business.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataAccess/Base/Infrastructure/Catalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAccess/Base/Infrastructure/Catalog.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../DataAccess/Base/Infrastructure/GlossaryDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAccess/Base/Infrastructure/GlossaryDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DataAccess/Base/Infrastructure/GlossaryDbInitizilizer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAccess/Base/Infrastructure/GlossaryDbInitizilizer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataAccess/Base/Interfaces/ICatalog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAccess/Base/Interfaces/ICatalog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DataAccess/DataAccess.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../DataAccess/DataAccess.csproj" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +47,8 @@
       <file leaf-file-name="edit-user-dialog.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Client/src/app/admin/EditUser/edit-user-dialog.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+            <state relative-caret-position="280">
+              <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -213,7 +218,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/Client/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="750" />
     <option name="height" value="735" />
@@ -394,15 +399,15 @@
       <workItem from="1522436672369" duration="8202000" />
       <workItem from="1522477455671" duration="697000" />
       <workItem from="1522652406436" duration="5000" />
-      <workItem from="1522672665012" duration="275000" />
+      <workItem from="1522672665012" duration="874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89447000" />
+    <option name="totallyTimeSpent" value="90046000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="7" />
@@ -782,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/admin/EditUser/edit-user-dialog.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="64" column="7" lean-forward="true" selection-start-line="64" selection-start-column="7" selection-end-line="64" selection-end-column="7" />
+        <state relative-caret-position="280">
+          <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>

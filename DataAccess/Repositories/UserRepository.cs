@@ -7,9 +7,9 @@ using DataAccess.Base.Repositories;
 
 namespace DataAccess.Repositories
 {
-    public class UserRepository : BaseEntityRepository<User, GlossaryDbContext>, IUserRepository
+    public class UserRepository : BaseEntityRepository<User, ApplicationDbContext>, IUserRepository
     {
-        public UserRepository(IDatabaseFactory<GlossaryDbContext> databaseFactory)
+        public UserRepository(IDatabaseFactory<ApplicationDbContext> databaseFactory)
             : base(databaseFactory)
         {
         }

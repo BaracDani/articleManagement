@@ -7,23 +7,27 @@ using DataAccess.Repositories;
 
 namespace DataAccess.Base.Infrastructure
 {
-    public class Catalog : UnitOfWork<GlossaryDbContext, DatabaseFactory<GlossaryDbContext>>, ICatalog
+    public class Catalog : UnitOfWork<ApplicationDbContext, DatabaseFactory<ApplicationDbContext>>, ICatalog
     {
         private IActivityLogRepository _activityLogRepository;
 
         private IUserRepository _userRepository;
+
+        private IArticleRepository _articleRepository;
 
         #region IRepositories
 
         public IActivityLogRepository ActivityLogRepository => _activityLogRepository ?? (_activityLogRepository = new ActivityLogRepository(DatabaseFactory));
 
         public IUserRepository UserRepository => _userRepository ?? (_userRepository = new UserRepository(DatabaseFactory));
+    
+        public IArticleRepository ArticleRepository => _articleRepository ?? (_articleRepository = new ArticleRepository(DatabaseFactory));
 
         #endregion
 
         #region Constructors
 
-        public Catalog(DatabaseFactory<GlossaryDbContext> databaseFactory)
+        public Catalog(DatabaseFactory<ApplicationDbContext> databaseFactory)
             : base(databaseFactory)
         {
         }

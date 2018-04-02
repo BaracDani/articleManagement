@@ -12,5 +12,7 @@ namespace DataAccess.Base.Interfaces
         IUserRepository UserRepository { get; }
 
         IActivityLogRepository ActivityLogRepository { get; }
+
+        IArticleRepository ArticleRepository { get; }
     }
 }

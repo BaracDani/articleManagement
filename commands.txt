@@ -1,0 +1,8 @@
+update-database -verbose //save changes to db and show on console the changes
+add-migration NewMigration
+enable-migrations
+
+
+npm start
+
+

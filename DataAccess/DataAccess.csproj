@@ -59,8 +59,6 @@
     <Compile Include="Base\Infrastructure\Catalog.cs" />
     <Compile Include="Base\Infrastructure\DatabaseFactory.cs" />
     <Compile Include="Base\Infrastructure\Disposable.cs" />
-    <Compile Include="Base\Infrastructure\GlossaryDbContext.cs" />
-    <Compile Include="Base\Infrastructure\GlossaryDbInitizilizer.cs" />
     <Compile Include="Base\Infrastructure\ApplicationDbContext.cs" />
     <Compile Include="Base\Infrastructure\UnitOfWork.cs" />
     <Compile Include="Base\Interfaces\IBaseEntityRepository.cs" />
@@ -74,18 +72,30 @@
     <Compile Include="Entities\AbstractClasses\IBaseEntity.cs" />
     <Compile Include="Entities\ActivityLog.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\Article.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Interfaces\IActivityLogRepository.cs" />
+    <Compile Include="Interfaces\IArticleRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
+    <Compile Include="Migrations\201804021552319_InitialMigration.cs" />
+    <Compile Include="Migrations\201804021552319_InitialMigration.Designer.cs">
+      <DependentUpon>201804021552319_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActivityLogRepository.cs" />
+    <Compile Include="Repositories\ArticleRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804021552319_InitialMigration.resx">
+      <DependentUpon>201804021552319_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

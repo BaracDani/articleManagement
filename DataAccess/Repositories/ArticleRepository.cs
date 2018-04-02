@@ -7,9 +7,9 @@ using DataAccess.Interfaces;
 
 namespace DataAccess.Repositories
 {
-    public class ActivityLogRepository : BaseEntityRepository<ActivityLog, ApplicationDbContext>, IActivityLogRepository
+    public class ArticleRepository : BaseEntityRepository<Article, ApplicationDbContext>, IArticleRepository
     {
-        public ActivityLogRepository(IDatabaseFactory<ApplicationDbContext> databaseFactory)
+        public ArticleRepository(IDatabaseFactory<ApplicationDbContext> databaseFactory)
             : base(databaseFactory)
         {
         }

@@ -20,6 +20,7 @@ namespace ApiService
             container.RegisterType<ICatalog, Catalog>();
             container.RegisterType<IAccountComponent, AccountComponent>();
             container.RegisterType<IUserComponent, UserComponent>();
+            container.RegisterType<IArticleComponent, ArticleComponent>();
 
             var resolver = new UnityDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = resolver;
