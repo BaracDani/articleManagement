@@ -9,10 +9,10 @@ using System.Configuration;
 
 namespace DataAccess.Base.Infrastructure
 {
-    public class GlossaryDbContext : DbContext
+    public class GlossaryDbContext : ApplicationDbContext
     {
         public GlossaryDbContext()
-            : base(ConfigurationManager.ConnectionStrings["DataAccess"].ConnectionString)
+            //: base(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString)
         {
 
         }
@@ -21,7 +21,7 @@ namespace DataAccess.Base.Infrastructure
 
         public DbSet<ActivityLog> ActivityLogs { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        //public DbSet<User> Users { get; set; }
 
         #endregion
 

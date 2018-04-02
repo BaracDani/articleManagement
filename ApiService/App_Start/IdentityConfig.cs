@@ -3,7 +3,8 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
-using ApiService.Models;
+using DataAccess.Entities;
+using DataAccess.Base.Infrastructure;
 using System;
 
 namespace ApiService

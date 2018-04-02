@@ -12,18 +12,18 @@ namespace DataAccess.Base.Infrastructure
         {
             base.Seed(context);
 
-            var user = new User
-            {
-                Active = true,
-                FirstName = "Daniel",
-                LastName = "Barac",
-                Password = "1234",
-                Email = "admin@yahoo.com"
-            };
+            //var user = new User
+            //{
+            //    Active = true,
+            //    FirstName = "Daniel",
+            //    LastName = "Barac",
+            //    Password = "1234",
+            //    Email = "admin@yahoo.com"
+            //};
 
-            context.Users.Add(user);
+            //context.Users.Add(user);
 
-            context.SaveChanges();
+            //context.SaveChanges();
         }
     }
 }

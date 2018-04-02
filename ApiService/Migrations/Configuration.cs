@@ -5,7 +5,7 @@ namespace ApiService.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ApiService.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataAccess.Base.Infrastructure.ApplicationDbContext>
     {
         public Configuration()
         {
@@ -13,7 +13,7 @@ namespace ApiService.Migrations
             ContextKey = "ApiService.Models.ApplicationDbContext";
         }
 
-        protected override void Seed(ApiService.Models.ApplicationDbContext context)
+        protected override void Seed(DataAccess.Base.Infrastructure.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

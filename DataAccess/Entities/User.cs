@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Entities
 {
-    [Table("Users")]
+    [Table("MyUsers")]
     public class User : BaseEntity
     {
         public string Email { get; set; }

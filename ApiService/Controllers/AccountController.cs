@@ -13,9 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using ApiService.Models;
+using DataAccess.Entities;
+using DataAccess.Base.Infrastructure;
 using ApiService.Providers;
 using ApiService.Results;
+using ApiService.Models;
 using System.Linq;
 
 namespace ApiService.Controllers

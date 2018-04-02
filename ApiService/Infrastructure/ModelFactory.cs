@@ -1,4 +1,4 @@
-﻿using ApiService.Models;
+﻿using DataAccess.Entities;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
