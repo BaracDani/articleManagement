@@ -10,7 +10,7 @@ namespace DataAccess.Entities
     [Table("ActivityLog")]
     public class ActivityLog : BaseEntity
     {
-        public long UserId { get; set; }
+        public string UserId { get; set; }
 
         public long EntityId { get; set; }
 

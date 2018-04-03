@@ -81,6 +81,10 @@
     <Compile Include="Migrations\201804021552319_InitialMigration.Designer.cs">
       <DependentUpon>201804021552319_InitialMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804031305308_UserIdChanged.cs" />
+    <Compile Include="Migrations\201804031305308_UserIdChanged.Designer.cs">
+      <DependentUpon>201804031305308_UserIdChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActivityLogRepository.cs" />
@@ -94,6 +98,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201804021552319_InitialMigration.resx">
       <DependentUpon>201804021552319_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804031305308_UserIdChanged.resx">
+      <DependentUpon>201804031305308_UserIdChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,6 +9,7 @@ using System.Web.Http;
 
 namespace ApiService.Controllers
 {
+    [Authorize]
     public class ArticleController : CrudApiController<ArticleView, IArticleComponent>
     {
         public ArticleController(IArticleComponent component): base(component)

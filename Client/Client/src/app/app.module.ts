@@ -16,6 +16,9 @@ import {AdminPageComponent} from './admin/admin-page.component';
 import {AdminService} from './admin/admin.service';
 import {AngularMaterialModule} from './angular-material.module';
 import {EditUserDialog} from './admin/EditUser/edit-user-dialog.component';
+import {ArticleService} from './article/article.service';
+import {AddArticleDialog} from './article/AddArticle/add-article-dialog.component';
+import {ArticleComponent} from './article/article.component';
 
 
 @NgModule({
@@ -23,7 +26,9 @@ import {EditUserDialog} from './admin/EditUser/edit-user-dialog.component';
     AppComponent,
     HomePageComponent,
     AdminPageComponent,
-    EditUserDialog
+    EditUserDialog,
+    AddArticleDialog,
+    ArticleComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -38,8 +43,8 @@ import {EditUserDialog} from './admin/EditUser/edit-user-dialog.component';
     LayoutModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [EditUserDialog],
-  providers: [CommonService, AdminService],
+  entryComponents: [EditUserDialog, AddArticleDialog],
+  providers: [CommonService, AdminService, ArticleService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

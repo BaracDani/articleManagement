@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>Add Article</h1>
+<div mat-dialog-content fxLayout="column">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Article Name" [(ngModel)]="name"/><br/>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput placeholder="Abstract" [(ngModel)]="abstract"></textarea>
+  </mat-form-field>
+  <span>{{errorMessage}}</span>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onAddArticle()">Add Article</button>
+</div>

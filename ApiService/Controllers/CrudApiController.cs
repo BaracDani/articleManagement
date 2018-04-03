@@ -7,6 +7,7 @@ using System.Web.Http;
 using Business.Components.Base;
 using Business.Views;
 using ApiService.Infrastructure;
+using Microsoft.AspNet.Identity;
 
 namespace ApiService.Controllers
 {
@@ -23,46 +24,41 @@ namespace ApiService.Controllers
         /// TEST Doc
         /// </summary>
         /// <returns>TEST Doc</returns>
-        [HttpGet]
         public IEnumerable<TV> Get()
         {
             var list = Component.GetAll();
             return list;
         }
-
-        [HttpGet]
+        
         public TV Get(int id)
         {
             var item = Component.GetById(id);
             return item;
         }
 
-        [HttpGet]
-        public string Create(string userName, string password)
-        {
-            //param.UserId = 1; //GetContextUser().Name;
-            //var item = Component.Create(param);
-            //if (item == null)
-            //{
-            //    throw new NotFoundException();
-            //}
-            return userName + password;
-        }
-
         //[HttpGet]
-        //public TV Create(TV param)
+        //public string Create(string userName, string password)
         //{
-        //    param.UserId = 1; //GetContextUser().Name;
-        //    var item = Component.Create(param);
-        //    if (item == null)
-        //    {
-        //        throw new NotFoundException();
-        //    }
-        //    return item;
+        //    //param.UserId = 1; //GetContextUser().Name;
+        //    //var item = Component.Create(param);
+        //    //if (item == null)
+        //    //{
+        //    //    throw new NotFoundException();
+        //    //}
+        //    return userName + password;
         //}
-
-        [HttpPost]
-        public void Update(TV param)
+        public TV Post([FromBody] TV param)
+        {
+            param.UserId = User.Identity.GetUserId();  //GetContextUser().Name;
+            var item = Component.Create(param);
+            if (item == null)
+            {
+                throw new Exception("Create Api error");
+            }
+            return item;
+        }
+        
+        public void Put([FromBody] TV param)
         {
             // param.UserId = 
             // param.ModifiedBy = GetContextUser().Name;
@@ -71,8 +67,7 @@ namespace ApiService.Controllers
                 throw new Exception("Not Found");
             }
         }
-
-        [HttpPost]
+        
         public void Delete(int id)
         {
             Component.Delete(id);
