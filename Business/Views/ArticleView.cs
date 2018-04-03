@@ -17,7 +17,8 @@ namespace Business.Views
             {
                 Id = item.Id,
                 Name = item.Name,
-                Abstract = item.Abstract
+                Abstract = item.Abstract,
+                UserId = item.UserId
             };
         }
 
@@ -30,7 +31,8 @@ namespace Business.Views
             {
                 Id = item.Id,
                 Name = item.Name,
-                Abstract = item.Abstract
+                Abstract = item.Abstract,
+                UserId = item.UserId
             };
         }
 

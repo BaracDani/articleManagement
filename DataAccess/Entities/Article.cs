@@ -7,6 +7,8 @@ namespace DataAccess.Entities
     {
         public string Name { get; set; }
         public string Abstract { get; set; }
+        
+        public string UserId { get; set; }
         [NotMapped]
         public override string Table => nameof(Article);
     }
