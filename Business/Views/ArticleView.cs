@@ -8,6 +8,16 @@ namespace Business.Views
         public string Name { get; set; }
         public string Abstract { get; set; }
 
+        public bool Approved { get; set; }
+
+        public bool Rejected { get; set; }
+
+        public bool InPending { get; set; }
+
+        public bool InReview { get; set; }
+
+        public string UserId { get; set; }
+
         public static Article ToEntity(ArticleView item)
         {
             if (item == null)
@@ -18,6 +28,10 @@ namespace Business.Views
                 Id = item.Id,
                 Name = item.Name,
                 Abstract = item.Abstract,
+                Approved = item.Approved,
+                Rejected = item.Rejected,
+                InPending = item.InPending,
+                InReview = item.InReview,
                 UserId = item.UserId
             };
         }
@@ -32,6 +46,10 @@ namespace Business.Views
                 Id = item.Id,
                 Name = item.Name,
                 Abstract = item.Abstract,
+                Approved = item.Approved,
+                Rejected = item.Rejected,
+                InPending = item.InPending,
+                InReview = item.InReview,
                 UserId = item.UserId
             };
         }

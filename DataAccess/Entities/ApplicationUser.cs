@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -20,6 +21,14 @@ namespace DataAccess.Entities
 
         [Required]
         public DateTime JoinDate { get; set; }
+
+        public virtual List<Article> Articles { get; set; }
+
+        public ApplicationUser()
+        {
+            this.Articles = new List<Article>();
+        }
+
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager, string authenticationType)
         {

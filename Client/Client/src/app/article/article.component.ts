@@ -25,6 +25,18 @@ export class ArticleComponent implements OnInit {
       }, (error: any) => {
         this.errorMessage = error;
       });
+    this.articleService.getPendingArticles()
+      .subscribe((result: IArticle[]) => {
+        console.log(result);
+      }, (error: any) => {
+        this.errorMessage = error;
+      });
+    this.articleService.getUserArticles()
+      .subscribe((result: IArticle[]) => {
+        console.log(result);
+      }, (error: any) => {
+        this.errorMessage = error;
+      });
   }
 
   createArticle() {

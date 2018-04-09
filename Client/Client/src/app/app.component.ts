@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
 
   private _mobileQueryListener: () => void;
 
-  constructor(private authService: UserService,
+  constructor(public authService: UserService,
               private authProfile: UserProfileService,
               private router: Router,
               changeDetectorRef: ChangeDetectorRef,

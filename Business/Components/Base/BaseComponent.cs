@@ -33,7 +33,6 @@ namespace Business.Components.Base
             var log = new ActivityLog
             {
                 Active = true,
-                UserId = param.UserId,
                 Operation = Operation.Create,
                 Table = nameof(TV),
                 EntityId = entity.Id,
@@ -80,6 +79,9 @@ namespace Business.Components.Base
             var item = Repository.GetById(param.Id);
             if (item == null)
                 return false;
+
+            var entity = ViewToEntity(param);
+            Repository.Update(entity);
 
             Catalog.SaveChanges();
             return true;

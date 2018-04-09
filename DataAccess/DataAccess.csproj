@@ -89,6 +89,18 @@
     <Compile Include="Migrations\201804031338220_UserIdAddedArticle.Designer.cs">
       <DependentUpon>201804031338220_UserIdAddedArticle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804091027189_EditArticle1.cs" />
+    <Compile Include="Migrations\201804091027189_EditArticle1.Designer.cs">
+      <DependentUpon>201804091027189_EditArticle1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804091056035_EditActivityLogUserId.cs" />
+    <Compile Include="Migrations\201804091056035_EditActivityLogUserId.Designer.cs">
+      <DependentUpon>201804091056035_EditActivityLogUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804091425557_UserToArticleRelation.cs" />
+    <Compile Include="Migrations\201804091425557_UserToArticleRelation.Designer.cs">
+      <DependentUpon>201804091425557_UserToArticleRelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActivityLogRepository.cs" />
@@ -108,6 +120,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804031338220_UserIdAddedArticle.resx">
       <DependentUpon>201804031338220_UserIdAddedArticle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091027189_EditArticle1.resx">
+      <DependentUpon>201804091027189_EditArticle1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091056035_EditActivityLogUserId.resx">
+      <DependentUpon>201804091056035_EditActivityLogUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804091425557_UserToArticleRelation.resx">
+      <DependentUpon>201804091425557_UserToArticleRelation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

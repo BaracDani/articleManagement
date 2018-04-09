@@ -9,7 +9,5 @@ namespace Business.Views
     public abstract class BaseView
     {
         public long Id { get; set; }
-
-        public string UserId { get; set; }
     }
 }

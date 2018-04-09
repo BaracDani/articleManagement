@@ -11,7 +11,7 @@ using Microsoft.AspNet.Identity;
 
 namespace ApiService.Controllers
 {
-    public abstract class CrudApiController<TV, TC> : ApiController where TV : BaseView where TC : IBaseComponent<TV>
+    public abstract class CrudApiController<TV, TC> : BaseApiController where TV : BaseView where TC : IBaseComponent<TV>
     {
         public TC Component { get; }
 
@@ -47,9 +47,8 @@ namespace ApiService.Controllers
         //    //}
         //    return userName + password;
         //}
-        public TV Post([FromBody] TV param)
+        public virtual TV Post([FromBody] TV param)
         {
-            param.UserId = User.Identity.GetUserId();  //GetContextUser().Name;
             var item = Component.Create(param);
             if (item == null)
             {

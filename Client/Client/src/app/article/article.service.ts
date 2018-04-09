@@ -35,6 +35,28 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('getArticles')));
   }
 
+  getPendingArticles(): Observable<IArticle[]> {
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/pendings';
+
+    return this._http.get(url, {headers: headers}).pipe(
+      tap(_ => console.log(`Get pending articles`)),
+      catchError(this.commonService.handleError<any>('getPendingArticles')));
+  }
+
+  getUserArticles(): Observable<IArticle[]> {
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/userArticle';
+
+    return this._http.get(url, {headers: headers}).pipe(
+      tap(_ => console.log(`Get user articles`)),
+      catchError(this.commonService.handleError<any>('getUserArticles')));
+  }
+
   createArticle(data: IArticle): Observable<any> {
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
