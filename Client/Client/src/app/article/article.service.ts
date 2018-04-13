@@ -9,7 +9,8 @@ import {UserProfileService} from "../account/user.profile";
 
 
 export interface IArticle {
-  name: string;
+  title: string;
+  author: string;
   abstract: string;
   id?: number;
   approvalStatus?: number;

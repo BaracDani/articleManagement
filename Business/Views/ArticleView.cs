@@ -1,14 +1,21 @@
 ﻿using DataAccess.Entities;
+using System;
 using System.Linq;
+using Business.Extensions;
 
 namespace Business.Views
 {
     public class ArticleView : BaseView
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
+
+        public string Author { get; set; }
+
         public string Abstract { get; set; }
         
         public int ApprovalStatus { get; set; }
+
+        public DateTime Deadline { get; set; }
 
         public string UserId { get; set; }
 
@@ -20,9 +27,11 @@ namespace Business.Views
             return new Article
             {
                 Id = item.Id,
-                Name = item.Name,
+                Title = item.Title,
+                Author = item.Author,
                 Abstract = item.Abstract,
                 ApprovalStatus = item.ApprovalStatus,
+                Deadline = item.Deadline.ToShortDateTime(),
                 UserId = item.UserId
             };
         }
@@ -35,9 +44,11 @@ namespace Business.Views
             return new ArticleView
             {
                 Id = item.Id,
-                Name = item.Name,
+                Title = item.Title,
+                Author = item.Author,
                 Abstract = item.Abstract,
                 ApprovalStatus = item.ApprovalStatus,
+                Deadline = item.Deadline.ToLongDateTime(),
                 UserId = item.UserId
             };
         }

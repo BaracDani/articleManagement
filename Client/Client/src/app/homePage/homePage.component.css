@@ -1,3 +1,7 @@
 ﻿.home-page {
   height: 100%;
 }
+
+mat-card {
+  margin-bottom: 20px;
+}

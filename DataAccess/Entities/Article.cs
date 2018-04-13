@@ -6,10 +6,13 @@ namespace DataAccess.Entities
     [Table("Article")]
     public class Article : BaseEntity
     {
-        public string Name { get; set; }
+        public string Title { get; set; }
+        public string Author { get; set; }
         public string Abstract { get; set; }
         
         public int ApprovalStatus { get; set; }
+
+        public string Deadline { get; set; }
         
         public ApplicationUser User { get; set; }
 

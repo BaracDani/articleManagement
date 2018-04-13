@@ -13,8 +13,9 @@ import {ArticleService, IArticle} from '../article.service';
 })
 export class AddArticleDialog {
   errorMessage: string;
-  name: string;
+  title: string;
   abstract: string;
+  author: string;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,
               private dialogRef: MatDialogRef<AddArticleDialog>,
@@ -26,8 +27,9 @@ export class AddArticleDialog {
 
   onAddArticle(): void {
     let data: IArticle = {
-      name: this.name,
-      abstract: this.abstract
+      title: this.title,
+      abstract: this.abstract,
+      author: this.author
     };
 
     this.articleService.createArticle(data).subscribe((_) => {

@@ -31,6 +31,7 @@ namespace ApiService.Controllers
         {
             param.UserId = User.Identity.GetUserId();
             param.ApprovalStatus = 1;
+            param.Deadline = DateTime.Now.AddDays(7);
             var item = Component.Create(param);
             if (item == null)
             {

@@ -105,6 +105,10 @@
     <Compile Include="Migrations\201804131620065_EditArticleAddApprovalStatus.Designer.cs">
       <DependentUpon>201804131620065_EditArticleAddApprovalStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804131756284_EditArticle2.cs" />
+    <Compile Include="Migrations\201804131756284_EditArticle2.Designer.cs">
+      <DependentUpon>201804131756284_EditArticle2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActivityLogRepository.cs" />
@@ -136,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804131620065_EditArticleAddApprovalStatus.resx">
       <DependentUpon>201804131620065_EditArticleAddApprovalStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804131756284_EditArticle2.resx">
+      <DependentUpon>201804131756284_EditArticle2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
