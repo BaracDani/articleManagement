@@ -24,7 +24,7 @@ namespace ApiService.Controllers
         /// TEST Doc
         /// </summary>
         /// <returns>TEST Doc</returns>
-        public IEnumerable<TV> Get()
+        public virtual IEnumerable<TV> Get()
         {
             var list = Component.GetAll();
             return list;

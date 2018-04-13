@@ -1,5 +1,5 @@
 ﻿import {Component} from '@angular/core';
-import {UserService} from '../account/user.service';
+import {ArticleService, IArticle} from "../article/article.service";
 
 @Component({
   selector: 'homePage',
@@ -10,18 +10,20 @@ import {UserService} from '../account/user.service';
 export class HomePageComponent {
 
   pageTitle: string = 'HomePage';
+  articles: IArticle[] = [];
   errorMessage: string;
 
-  constructor(private _loginService: UserService) {
+  constructor(private articleService: ArticleService) {
   }
 
-  userInfo() {
-    this._loginService.userInfo()
-      .subscribe((result: any) => {
-        let res = result;
-        console.log(res);
+
+  ngOnInit(): void {
+    this.articleService.getArticles()
+      .subscribe((result: IArticle[]) => {
+        this.articles = result;
       }, (error: any) => {
         this.errorMessage = error;
       });
   }
+
 }

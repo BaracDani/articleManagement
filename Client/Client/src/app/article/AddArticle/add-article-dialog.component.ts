@@ -26,8 +26,8 @@ export class AddArticleDialog {
 
   onAddArticle(): void {
     let data: IArticle = {
-      Name: this.name,
-      Abstract: this.abstract
+      name: this.name,
+      abstract: this.abstract
     };
 
     this.articleService.createArticle(data).subscribe((_) => {

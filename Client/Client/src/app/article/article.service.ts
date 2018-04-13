@@ -9,8 +9,11 @@ import {UserProfileService} from "../account/user.profile";
 
 
 export interface IArticle {
-  Name: string;
-  Abstract: string;
+  name: string;
+  abstract: string;
+  id?: number;
+  approvalStatus?: number;
+  userId?: string;
 }
 
 @Injectable()
@@ -26,8 +29,7 @@ export class ArticleService {
 
   getArticles(): Observable<IArticle[]> {
 
-    let headers = new HttpHeaders();
-    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
     let url = this.commonService.getBaseUrl() + '/api/article';
 
     return this._http.get(url, {headers: headers}).pipe(

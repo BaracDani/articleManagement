@@ -7,7 +7,7 @@ namespace Business.Interfaces
 {
     public interface IArticleComponent : IBaseComponent<ArticleView>
     {
-        IEnumerable<ArticleView> GetAllPendings();
+        IEnumerable<ArticleView> GetAllByApprovalStatus(int approvalStatus);
     }
 }
 

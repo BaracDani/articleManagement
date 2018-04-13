@@ -6,9 +6,9 @@ import {AdminPageComponent} from './admin/admin-page.component';
 import {ArticleComponent} from './article/article.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/login', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
   {
-    path: 'home', canActivate: [AuthGuard], component: HomePageComponent
+    path: 'home', component: HomePageComponent
   },
   {
     path: 'article', canActivate: [AuthGuard], component: ArticleComponent

@@ -8,14 +8,8 @@ namespace DataAccess.Entities
     {
         public string Name { get; set; }
         public string Abstract { get; set; }
-
-        public bool Approved { get; set; }
-
-        public bool Rejected { get; set; }
-
-        public bool InPending { get; set; }
-
-        public bool InReview { get; set; }
+        
+        public int ApprovalStatus { get; set; }
         
         public ApplicationUser User { get; set; }
 

@@ -7,14 +7,8 @@ namespace Business.Views
     {
         public string Name { get; set; }
         public string Abstract { get; set; }
-
-        public bool Approved { get; set; }
-
-        public bool Rejected { get; set; }
-
-        public bool InPending { get; set; }
-
-        public bool InReview { get; set; }
+        
+        public int ApprovalStatus { get; set; }
 
         public string UserId { get; set; }
 
@@ -28,10 +22,7 @@ namespace Business.Views
                 Id = item.Id,
                 Name = item.Name,
                 Abstract = item.Abstract,
-                Approved = item.Approved,
-                Rejected = item.Rejected,
-                InPending = item.InPending,
-                InReview = item.InReview,
+                ApprovalStatus = item.ApprovalStatus,
                 UserId = item.UserId
             };
         }
@@ -46,10 +37,7 @@ namespace Business.Views
                 Id = item.Id,
                 Name = item.Name,
                 Abstract = item.Abstract,
-                Approved = item.Approved,
-                Rejected = item.Rejected,
-                InPending = item.InPending,
-                InReview = item.InReview,
+                ApprovalStatus = item.ApprovalStatus,
                 UserId = item.UserId
             };
         }

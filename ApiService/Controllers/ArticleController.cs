@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Microsoft.AspNet.Identity;
 using System.Threading.Tasks;
+using ApiService.Models;
 
 namespace ApiService.Controllers
 {
@@ -18,11 +19,18 @@ namespace ApiService.Controllers
         public ArticleController(IArticleComponent component): base(component)
         {
         }
-        
+
+        [AllowAnonymous]
+        public override IEnumerable<ArticleView> Get()
+        {
+            var list = Component.GetAllByApprovalStatus((int)ApprovalStatus.Approved);
+            return list;
+        }
+
         public override ArticleView Post([FromBody] ArticleView param)
         {
             param.UserId = User.Identity.GetUserId();
-            param.InPending = true;
+            param.ApprovalStatus = 1;
             var item = Component.Create(param);
             if (item == null)
             {
@@ -31,11 +39,10 @@ namespace ApiService.Controllers
             return item;
         }
 
-        [AllowAnonymous]
         [Route("pendings")]
         public IEnumerable<ArticleView> GetPendings()
         {
-            var list = Component.GetAllPendings();
+            var list = Component.GetAllByApprovalStatus((int)ApprovalStatus.InPending);
             return list;
         }
 

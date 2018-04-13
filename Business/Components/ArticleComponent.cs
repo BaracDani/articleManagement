@@ -28,11 +28,11 @@ namespace Business.Components
             return ArticleView.FromEntity(item);
         }
 
-        public IEnumerable<ArticleView> GetAllPendings()
+        public IEnumerable<ArticleView> GetAllByApprovalStatus(int approvalStatus)
         {
             try
             {
-                var list = Repository.Filter(article => article.InPending == true);
+                var list = Repository.Filter(article => article.ApprovalStatus == approvalStatus);
                 var result = list.ToArray().Select(EntityToView);
                 return result;
             }
