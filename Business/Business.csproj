@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\AccountComponent.cs" />
+    <Compile Include="Components\ReviewedArticleComponent.cs" />
     <Compile Include="Components\ArticleComponent.cs" />
     <Compile Include="Components\Base\BaseComponent.cs" />
     <Compile Include="Components\Base\IBaseComponent.cs" />
@@ -53,9 +54,11 @@
     <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\JsonExtension.cs" />
     <Compile Include="Interfaces\IAccountComponent.cs" />
+    <Compile Include="Interfaces\IReviewedArticleComponent.cs" />
     <Compile Include="Interfaces\IArticleComponent.cs" />
     <Compile Include="Interfaces\IUserComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ReviewedArticleView.cs" />
     <Compile Include="Views\ArticleView.cs" />
     <Compile Include="Views\BaseView.cs" />
     <Compile Include="Views\UserView.cs" />

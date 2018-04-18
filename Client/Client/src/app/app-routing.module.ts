@@ -4,6 +4,7 @@ import {HomePageComponent} from './homePage/homePage.component';
 import {AuthGuard} from './account/auth.guard';
 import {AdminPageComponent} from './admin/admin-page.component';
 import {ArticleComponent} from './article/article.component';
+import {ReviewComponent} from "./article/review/review.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -15,6 +16,9 @@ const routes: Routes = [
   },
   {
     path: 'admin', canActivate: [AuthGuard], component: AdminPageComponent
+  },
+  {
+    path: 'review', canActivate: [AuthGuard], component: ReviewComponent
   }
 ];
 

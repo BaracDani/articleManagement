@@ -12,6 +12,7 @@ import {ArticleService, IArticle} from './article.service';
 export class ArticleComponent implements OnInit {
 
   pageTitle: string = 'Article';
+  articles: IArticle[] = [];
   errorMessage: string;
 
   constructor(private dialog: MatDialog,
@@ -19,21 +20,9 @@ export class ArticleComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.articleService.getArticles()
-      .subscribe((result: IArticle[]) => {
-        console.log(result);
-      }, (error: any) => {
-        this.errorMessage = error;
-      });
-    this.articleService.getPendingArticles()
-      .subscribe((result: IArticle[]) => {
-        console.log(result);
-      }, (error: any) => {
-        this.errorMessage = error;
-      });
     this.articleService.getUserArticles()
       .subscribe((result: IArticle[]) => {
-        console.log(result);
+        this.articles = result;
       }, (error: any) => {
         this.errorMessage = error;
       });

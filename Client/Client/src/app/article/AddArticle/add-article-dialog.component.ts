@@ -4,7 +4,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import {startWith} from 'rxjs/operators/startWith';
 import {map} from 'rxjs/operators/map';
-import {ArticleService, IArticle} from '../article.service';
+import {ArticleService, IAddArticle, IArticle} from '../article.service';
 
 @Component({
   selector: 'add-article-dialog',
@@ -26,7 +26,7 @@ export class AddArticleDialog {
   }
 
   onAddArticle(): void {
-    let data: IArticle = {
+    let data: IAddArticle = {
       title: this.title,
       abstract: this.abstract,
       author: this.author

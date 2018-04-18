@@ -76,9 +76,9 @@ namespace Business.Components.Base
 
         public bool Update(TV param)
         {
-            var item = Repository.GetById(param.Id);
-            if (item == null)
-                return false;
+            //var item = Repository.GetById(param.Id);
+            //if (item == null)
+                //return false;
 
             var entity = ViewToEntity(param);
             Repository.Update(entity);

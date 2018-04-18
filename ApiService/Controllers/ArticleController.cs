@@ -16,8 +16,11 @@ namespace ApiService.Controllers
     [RoutePrefix("api/article")]
     public class ArticleController : CrudApiController<ArticleView, IArticleComponent>
     {
-        public ArticleController(IArticleComponent component): base(component)
+        public IReviewedArticleComponent ReviewedArticleComponent { get; }
+
+        public ArticleController(IArticleComponent component, IReviewedArticleComponent reviewedArticleComponent): base(component)
         {
+            this.ReviewedArticleComponent = reviewedArticleComponent;
         }
 
         [AllowAnonymous]
@@ -61,6 +64,42 @@ namespace ApiService.Controllers
             }
 
             return NotFound();
+        }
+
+        [Route("approve")]
+        [HttpPut]
+        public IHttpActionResult ApproveArticle([FromBody] ArticleView param)
+        {
+            ReviewedArticleView reviewedArticle = new ReviewedArticleView();
+            reviewedArticle.UserId = User.Identity.GetUserId();
+            reviewedArticle.ArticleId = param.Id;
+            reviewedArticle.Approved = true;
+            var item = ReviewedArticleComponent.Create(reviewedArticle);
+            int numberOfApproved = ReviewedArticleComponent.GetNumberofReviewed(reviewedArticle);
+            if(numberOfApproved == 3)
+            {
+                bool isApproved = ReviewedArticleComponent.GetNumberofApproved(reviewedArticle) > 1;
+                if (isApproved)
+                {
+                    param.ApprovalStatus = (int)ApprovalStatus.Approved;
+                } else
+                {
+                    param.ApprovalStatus = (int)ApprovalStatus.Rejected;
+                }
+                bool rez = Component.Update(param);
+                if (rez)
+                {
+                    return Ok(item);
+                } else
+                {
+                    return BadRequest("Server crashed! Article was not updated");
+                }
+            }
+            if (item == null)
+            {
+                return BadRequest("Server crashed! Review was not added");
+            }
+            return Ok(item);
         }
 
     }

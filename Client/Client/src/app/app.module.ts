@@ -19,6 +19,7 @@ import {EditUserDialog} from './admin/EditUser/edit-user-dialog.component';
 import {ArticleService} from './article/article.service';
 import {AddArticleDialog} from './article/AddArticle/add-article-dialog.component';
 import {ArticleComponent} from './article/article.component';
+import {ReviewComponent} from './article/review/review.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {ArticleComponent} from './article/article.component';
     AdminPageComponent,
     EditUserDialog,
     AddArticleDialog,
-    ArticleComponent
+    ArticleComponent,
+    ReviewComponent
   ],
   imports: [
     AlertModule.forRoot(),

@@ -43,6 +43,7 @@
 
         <a mat-list-item routerLink="/home">Home</a>
         <a mat-list-item routerLink="/article" *ngIf="authService.isAuthenticated()">Article</a>
+        <a mat-list-item routerLink="/review" *ngIf="authService.isAuthenticated()">Review Articles</a>
         <a mat-list-item routerLink="/login" *ngIf="!authService.isAuthenticated()">Login</a>
         <a mat-list-item routerLink="/register" *ngIf="!authService.isAuthenticated()">Register</a>
         <a mat-list-item routerLink="/admin" *ngIf="authService.isUserAdmin()">Admin</a>

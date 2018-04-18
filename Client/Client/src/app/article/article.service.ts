@@ -9,14 +9,20 @@ import {UserProfileService} from "../account/user.profile";
 
 
 export interface IArticle {
+  id: number;
+  userId: string;
   title: string;
   author: string;
   abstract: string;
-  id?: number;
-  approvalStatus?: number;
-  userId?: string;
+  approvalStatus: number;
+  deadline: string;
 }
 
+export interface IAddArticle {
+  title: string;
+  abstract: string;
+  author: string;
+}
 @Injectable()
 export class ArticleService {
 
@@ -60,7 +66,7 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('getUserArticles')));
   }
 
-  createArticle(data: IArticle): Observable<any> {
+  createArticle(data: IAddArticle): Observable<any> {
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
     let url = this.commonService.getBaseUrl() + '/api/article';
@@ -68,6 +74,16 @@ export class ArticleService {
     return this._http.post(url, data, {headers: headers}).pipe(
       tap(_ => console.log(`addArticle`)),
       catchError(this.commonService.handleError<any>('addArticle')));
+  }
+
+  approveArticle(data: IArticle): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/approve';
+
+    return this._http.put(url, data, {headers: headers}).pipe(
+      tap(_ => console.log(`approveArticle`)),
+      catchError(this.commonService.handleError<any>('approveArticle')));
   }
 
 }
