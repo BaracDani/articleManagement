@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Add Journal</h1>
+<div mat-dialog-content fxLayout="column">
+  <mat-form-field>
+    <input cdkFocusInitial matInput type="text" placeholder="Journal Title" [(ngModel)]="title"/><br/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="Journal domain" [formControl]="domainControl" required>
+      <mat-option *ngFor="let domain of domains" [value]="domain">
+        {{domain.name}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="domainControl.hasError('required')">Please choose a domain</mat-error>
+  </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onAddJournal()">Add Journal</button>
+</div>

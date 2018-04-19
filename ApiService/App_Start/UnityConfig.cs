@@ -22,6 +22,8 @@ namespace ApiService
             container.RegisterType<IUserComponent, UserComponent>();
             container.RegisterType<IArticleComponent, ArticleComponent>();
             container.RegisterType<IReviewedArticleComponent, ReviewedArticleComponent>();
+            container.RegisterType<IDomainComponent, DomainComponent>();
+            container.RegisterType<IJournalComponent, JournalComponent>();
 
             var resolver = new UnityDependencyResolver(container);
             GlobalConfiguration.Configuration.DependencyResolver = resolver;

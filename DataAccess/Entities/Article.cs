@@ -26,7 +26,7 @@ namespace DataAccess.Entities
         [Required]
         public string UserId { get; set; }
 
-        public virtual ICollection<ReviewedArticle> Reviewers { get; set; }
+        public virtual List<ReviewedArticle> Reviewers { get; set; }
 
         [NotMapped]
         public override string Table => nameof(Article);

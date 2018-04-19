@@ -24,12 +24,15 @@ namespace DataAccess.Entities
 
         public virtual List<Article> Articles { get; set; }
 
-        public virtual ICollection<ReviewedArticle> ReviewedArticles { get; set; }
+        public virtual List<ReviewedArticle> ReviewedArticles { get; set; }
+
+        public virtual List<Journal> Journals { get; set; }
 
         public ApplicationUser()
         {
             this.Articles = new List<Article>();
             this.ReviewedArticles = new List<ReviewedArticle>();
+            this.Journals = new List<Journal>();
         }
 
 

@@ -4,12 +4,16 @@ import {HomePageComponent} from './homePage/homePage.component';
 import {AuthGuard} from './account/auth.guard';
 import {AdminPageComponent} from './admin/admin-page.component';
 import {ArticleComponent} from './article/article.component';
-import {ReviewComponent} from "./article/review/review.component";
+import {ReviewComponent} from './article/review/review.component';
+import {JournalComponent} from './journal/journal.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {
     path: 'home', component: HomePageComponent
+  },
+  {
+    path: 'journal', canActivate: [AuthGuard], component: JournalComponent
   },
   {
     path: 'article', canActivate: [AuthGuard], component: ArticleComponent

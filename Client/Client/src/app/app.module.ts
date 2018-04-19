@@ -4,12 +4,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel 
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {LayoutModule} from '@angular/cdk/layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {AlertModule} from 'ngx-bootstrap';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
-import {AlertModule} from 'ngx-bootstrap';
 import {HomePageComponent} from './homePage/homePage.component';
-import {HttpClientModule} from '@angular/common/http';
 import {CommonService} from './core/repository/common.service';
 import {UserModule} from './account/user.module';
 import {AdminPageComponent} from './admin/admin-page.component';
@@ -20,6 +20,9 @@ import {ArticleService} from './article/article.service';
 import {AddArticleDialog} from './article/AddArticle/add-article-dialog.component';
 import {ArticleComponent} from './article/article.component';
 import {ReviewComponent} from './article/review/review.component';
+import {JournalComponent} from './journal/journal.component';
+import {JournalService} from './journal/journal.service';
+import {AddJournalDialog} from './journal/AddJournal/add-journal-dialog.component';
 
 
 @NgModule({
@@ -28,6 +31,8 @@ import {ReviewComponent} from './article/review/review.component';
     HomePageComponent,
     AdminPageComponent,
     EditUserDialog,
+    JournalComponent,
+    AddJournalDialog,
     AddArticleDialog,
     ArticleComponent,
     ReviewComponent
@@ -45,8 +50,8 @@ import {ReviewComponent} from './article/review/review.component';
     LayoutModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [EditUserDialog, AddArticleDialog],
-  providers: [CommonService, AdminService, ArticleService],
+  entryComponents: [EditUserDialog, AddArticleDialog, AddJournalDialog],
+  providers: [CommonService, AdminService, ArticleService, JournalService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

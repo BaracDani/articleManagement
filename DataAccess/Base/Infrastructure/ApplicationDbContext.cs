@@ -25,6 +25,8 @@ namespace DataAccess.Base.Infrastructure
 
         public DbSet<Article> Articles { get; set; }
         public DbSet<ReviewedArticle> ReviewedArticles { get; set; }
+        public DbSet<Domain> Domains { get; set; }
+        public DbSet<Journal> Journals { get; set; }
 
         //public DbSet<User> Users { get; set; }
 
@@ -42,17 +44,8 @@ namespace DataAccess.Base.Infrastructure
 
             //relations for ReviewedArticles
             modelBuilder.Entity<ReviewedArticle>().HasKey(c => new { c.UserId, c.ArticleId });
-            modelBuilder.Entity<ApplicationUser>()
-                .HasMany(c => c.ReviewedArticles)
-                .WithRequired()
-                .HasForeignKey(c => c.UserId)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Article>()
-                .HasMany(c => c.Reviewers)
-                .WithRequired()
-                .HasForeignKey(c => c.ArticleId)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<ReviewedArticle>().Ignore(rw => rw.Id);
+            
         }
 
         public static ApplicationDbContext Create()

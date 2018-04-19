@@ -17,6 +17,10 @@ namespace DataAccess.Base.Infrastructure
 
         private IReviewedArticleRepository _reviewedArticleRepository;
 
+        private IDomainRepository _domainRepository;
+
+        private IJournalRepository _journalRepository;
+
         #region IRepositories
 
         public IActivityLogRepository ActivityLogRepository => _activityLogRepository ?? (_activityLogRepository = new ActivityLogRepository(DatabaseFactory));
@@ -24,8 +28,12 @@ namespace DataAccess.Base.Infrastructure
         public IUserRepository UserRepository => _userRepository ?? (_userRepository = new UserRepository(DatabaseFactory));
     
         public IArticleRepository ArticleRepository => _articleRepository ?? (_articleRepository = new ArticleRepository(DatabaseFactory));
+
         public IReviewedArticleRepository ReviewedArticleRepository => _reviewedArticleRepository ?? (_reviewedArticleRepository = new ReviewedArticleRepository(DatabaseFactory));
 
+        public IDomainRepository DomainRepository => _domainRepository ?? (_domainRepository = new DomainRepository(DatabaseFactory));
+
+        public IJournalRepository JournalRepository => _journalRepository ?? (_journalRepository = new JournalRepository(DatabaseFactory));
         #endregion
 
         #region Constructors

@@ -9,12 +9,12 @@ namespace DataAccess.Entities
 
         public bool Approved { get; set; }
 
-        public virtual Article Article { get; set; }
+        public Article Article { get; set; }
 
         [Required]
         public long ArticleId { get; set; }
 
-        public virtual ApplicationUser User { get; set; }
+        public ApplicationUser User { get; set; }
 
         [Required]
         public string UserId { get; set; }
