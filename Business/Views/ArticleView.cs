@@ -19,6 +19,10 @@ namespace Business.Views
 
         public string UserId { get; set; }
 
+        public long JournalId { get; set; }
+        
+        public string FilePath { get; set; }
+
         public static Article ToEntity(ArticleView item)
         {
             if (item == null)
@@ -32,7 +36,9 @@ namespace Business.Views
                 Abstract = item.Abstract,
                 ApprovalStatus = item.ApprovalStatus,
                 Deadline = item.Deadline.ToShortDateTime(),
-                UserId = item.UserId
+                UserId = item.UserId,
+                JournalId = item.JournalId,
+                FilePath = item.FilePath
             };
         }
 
@@ -49,7 +55,9 @@ namespace Business.Views
                 Abstract = item.Abstract,
                 ApprovalStatus = item.ApprovalStatus,
                 Deadline = item.Deadline.ToLongDateTime(),
-                UserId = item.UserId
+                UserId = item.UserId,
+                JournalId = item.JournalId,
+                FilePath = item.FilePath
             };
         }
 

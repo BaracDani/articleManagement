@@ -26,6 +26,12 @@ namespace DataAccess.Entities
         [Required]
         public string UserId { get; set; }
 
+        public Journal Journal { get; set; }
+
+        public long JournalId { get; set; }
+
+        public string FilePath { get; set; }
+
         public virtual List<ReviewedArticle> Reviewers { get; set; }
 
         [NotMapped]

@@ -26,4 +26,29 @@ export class HomePageComponent {
       });
   }
 
+  downloadFile(filePath: string) {
+    this.articleService.getFile(filePath)
+      .subscribe((result: any) => {
+        console.log(result);
+        let a = document.createElement("a");
+        a.href = URL.createObjectURL(result);
+        if (result.type === "application/pdf"){
+          a.download = 'download.pdf';
+        }
+        if (result.type === "application/msword") {
+          a.download = 'download.doc';
+        }
+        if (result.type ===
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document") {
+          a.download = 'download.docx';
+        }
+        document.body.appendChild(a);
+        a.click();
+        //var fileURL = URL.createObjectURL(blob);
+        //window.open(fileURL);
+      }, (error: any) => {
+        this.errorMessage = error;
+      });
+  }
+
 }

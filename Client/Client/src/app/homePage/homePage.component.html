@@ -14,7 +14,7 @@
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>See more</button>
-      <button mat-button>Download pdf</button>
+      <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import {catchError, tap} from 'rxjs/operators';
 import {Router} from '@angular/router';
 import {CommonService} from '../core/repository/common.service';
 import 'rxjs/add/operator/finally';
 import {UserProfileService} from "../account/user.profile";
+import {ResponseContentType} from "@angular/http";
 
 
 export interface IArticle {
@@ -16,6 +17,8 @@ export interface IArticle {
   abstract: string;
   approvalStatus: number;
   deadline: string;
+  journalId: number;
+  filePath: string;
 }
 
 export interface IAddArticle {
@@ -66,10 +69,21 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('getUserArticles')));
   }
 
-  createArticle(data: IAddArticle): Observable<any> {
-    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+  getFile(filePath: string): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
-    let url = this.commonService.getBaseUrl() + '/api/article';
+    let url = this.commonService.getBaseUrl() + '/api/article/downloadFile';
+    let myParams = new HttpParams().set('fileName', filePath);
+
+    return this._http.get(url, {headers: headers, params: myParams, responseType: 'blob'}).pipe(
+      tap(_ => console.log(`Download file`)),
+      catchError(this.commonService.handleError<any>('downloadFile')));
+  }
+
+  createArticle(data: FormData): Observable<any> {
+    let headers = new HttpHeaders({});
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/postArticle';
 
     return this._http.post(url, data, {headers: headers}).pipe(
       tap(_ => console.log(`addArticle`)),

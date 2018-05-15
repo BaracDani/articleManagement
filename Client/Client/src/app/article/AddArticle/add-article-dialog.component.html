@@ -1,6 +1,15 @@
 <h1 mat-dialog-title>Add Article</h1>
 <div mat-dialog-content fxLayout="column">
   <mat-form-field>
+    <mat-select placeholder="Journal domain" [formControl]="journalsControl" required>
+      <mat-option *ngFor="let journal of journals" [value]="journal">
+        {{journal.title}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="journalsControl.hasError('required')">Please choose a journal</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
     <input matInput type="text" placeholder="Article Title" [(ngModel)]="title"/><br/>
   </mat-form-field>
 
@@ -11,6 +20,10 @@
   <mat-form-field>
     <textarea matInput placeholder="Abstract" [(ngModel)]="abstract"></textarea>
   </mat-form-field>
+
+  <input type="file" (change)="fileChange($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
+
+  <span *ngIf="errorMessage" style="color: red">{{errorMessage}}</span>
 </div>
 <div mat-dialog-actions>
   <button mat-raised-button color="accent" (click)="onCancel()">Cancel</button>
