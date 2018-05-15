@@ -21,6 +21,7 @@ namespace ApiService.Controllers
         {
         }
 
+
         [AllowAnonymous]
         public override IEnumerable<JournalView> Get()
         {

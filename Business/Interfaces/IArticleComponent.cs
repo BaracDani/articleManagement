@@ -8,6 +8,8 @@ namespace Business.Interfaces
     public interface IArticleComponent : IBaseComponent<ArticleView>
     {
         IEnumerable<ArticleView> GetAllByApprovalStatus(int approvalStatus);
+
+        IEnumerable<ArticleView> GetAllPublished(long journalId);
     }
 }
 

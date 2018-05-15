@@ -33,6 +33,29 @@ namespace ApiService.Controllers
             return list;
         }
 
+
+
+        [AllowAnonymous]
+        [Route("published")]
+        [HttpGet]
+        public IHttpActionResult GetPublishedArticles([FromUri]string journalId)
+        {
+            if (String.IsNullOrEmpty(journalId))
+                return BadRequest("Journal Id invalid");
+            long convertedId;
+            try
+            {
+                convertedId = Convert.ToInt64(journalId);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Journal Id invalid: " + ex.Message);
+            }
+
+
+            var list = Component.GetAllPublished(convertedId);
+            return Ok(list);
+        }
         //public override ArticleView Post([FromBody] ArticleView param)
         //{
         //    param.UserId = User.Identity.GetUserId();
@@ -103,7 +126,7 @@ namespace ApiService.Controllers
                     ArticleView param = new ArticleView();
                     param.UserId = User.Identity.GetUserId();
                     param.ApprovalStatus = 1;
-                    param.Deadline = DateTime.Now.AddDays(7);
+                    param.Deadline = DateTime.Now;
                     param.Title = title;
                     param.Author = author;
                     param.Abstract = abstractContent;

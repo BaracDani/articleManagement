@@ -23,6 +23,7 @@ import {ReviewComponent} from './article/review/review.component';
 import {JournalComponent} from './journal/journal.component';
 import {JournalService} from './journal/journal.service';
 import {AddJournalDialog} from './journal/AddJournal/add-journal-dialog.component';
+import {PublishedJournalComponent} from './homePage/publishedJournal/published-journal.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {AddJournalDialog} from './journal/AddJournal/add-journal-dialog.componen
     AddJournalDialog,
     AddArticleDialog,
     ArticleComponent,
-    ReviewComponent
+    ReviewComponent,
+    PublishedJournalComponent
   ],
   imports: [
     AlertModule.forRoot(),

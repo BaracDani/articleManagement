@@ -1,40 +1,31 @@
-import {Component, OnInit} from '@angular/core';
-import {MatDialog} from '@angular/material';
-import {ArticleService, IArticle} from '../article.service';
+﻿import {Component, Input} from '@angular/core';
+import {IJournal, JournalService} from '../../journal/journal.service';
+import {ArticleService, IArticle} from '../../article/article.service';
 
 @Component({
-  selector: 'review',
-  templateUrl: './review.component.html',
-  styleUrls: ['./review.component.css']
+  selector: 'publishedJournal',
+  templateUrl: './published-journal.component.html',
+  styleUrls: ['./published-journal.component.css']
 })
 
-export class ReviewComponent implements OnInit {
+export class PublishedJournalComponent {
 
-  pageTitle: string = 'Review articles';
-  pendingArticles: IArticle[] = [];
+  @Input() journal: IJournal;
+  articles: IArticle[] = [];
   errorMessage: string;
 
-  constructor(private dialog: MatDialog,
+  constructor(private journalService: JournalService,
               private articleService: ArticleService) {
   }
 
   ngOnInit(): void {
-    this.articleService.getPendingArticles()
+    this.journalService.getJournalArticles(this.journal.id)
       .subscribe((result: IArticle[]) => {
-        this.pendingArticles = result;
+        this.articles = result;
       }, (error: any) => {
         this.errorMessage = error;
       });
   }
-
-  approveArticle(article: IArticle): void {
-    this.articleService.approveArticle(article).subscribe((result: any) => {
-      console.log(result);
-    }, (error: any) => {
-      this.errorMessage = error;
-    });
-  }
-
 
   downloadFile(filePath: string) {
     this.articleService.getFile(filePath)
@@ -60,5 +51,4 @@ export class ReviewComponent implements OnInit {
         this.errorMessage = error;
       });
   }
-
 }

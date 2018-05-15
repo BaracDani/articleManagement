@@ -48,7 +48,8 @@ namespace Business.Components.Base
 
         public bool Delete(int id)
         {
-            Repository.LogicalDelete(id);
+            Repository.Delete(id);
+            Catalog.SaveChanges();
             return true;
         }
 

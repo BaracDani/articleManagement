@@ -12,7 +12,7 @@ import {AddJournalDialog} from './AddJournal/add-journal-dialog.component';
 export class JournalComponent implements OnInit {
 
   pageTitle: string = 'Journals';
-  journals: IJournal[] = [];
+  userJournals: IJournal[] = [];
   errorMessage: string;
 
   constructor(private dialog: MatDialog,
@@ -20,9 +20,13 @@ export class JournalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getJournals();
+  }
+
+  getJournals() {
     this.journalService.getUserJournals()
       .subscribe((result: IJournal[]) => {
-        this.journals = result;
+        this.userJournals = result;
       }, (error: any) => {
         this.errorMessage = error;
       });
@@ -36,7 +40,32 @@ export class JournalComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      this.getJournals();
+    });
+  }
 
+  publishJournal(journal: IJournal) {
+    journal.isPublished = true;
+    journal.publishDate = new Date().toISOString();
+    this.journalService.updateJournal(journal).subscribe((result: any) => {
+    }, (error: any) => {
+      this.errorMessage = error;
+    });
+  }
+
+  unpublishJournal(journal: IJournal) {
+    journal.isPublished = false;
+    this.journalService.updateJournal(journal).subscribe((result: any) => {
+    }, (error: any) => {
+      this.errorMessage = error;
+    });
+  }
+
+  deleteJournal(journal: IJournal) {
+    this.journalService.deleteJournal(journal).subscribe((result: any) => {
+      this.getJournals();
+    }, (error: any) => {
+      this.errorMessage = error;
     });
   }
 }

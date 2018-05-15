@@ -73,9 +73,9 @@ export class ArticleService {
     let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
     let url = this.commonService.getBaseUrl() + '/api/article/downloadFile';
-    let myParams = new HttpParams().set('fileName', filePath);
+    let params = new HttpParams().set('fileName', filePath);
 
-    return this._http.get(url, {headers: headers, params: myParams, responseType: 'blob'}).pipe(
+    return this._http.get(url, {headers: headers, params: params, responseType: 'blob'}).pipe(
       tap(_ => console.log(`Download file`)),
       catchError(this.commonService.handleError<any>('downloadFile')));
   }

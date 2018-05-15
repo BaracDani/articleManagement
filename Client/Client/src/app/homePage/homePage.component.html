@@ -1,20 +1,11 @@
-﻿<div class="container-fluid home-page" fxLayout="column">
-  <div fxFlex="20%">Welcome to Article Management Application
-  </div>
-  <mat-card class="" *ngFor="let article of articles;">
-    <mat-card-header>
-      <div mat-card-avatar *ngIf="article.avatar"></div>
-      <mat-card-title>{{article.title}}</mat-card-title>
-      <mat-card-subtitle>{{article.author}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      <p>
-        {{article.abstract}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>See more</button>
-      <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+﻿<mat-accordion>
+  <mat-expansion-panel *ngFor="let journal of journals;">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{journal.title}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <publishedJournal [journal]="journal"></publishedJournal>
+  </mat-expansion-panel>
+</mat-accordion>
