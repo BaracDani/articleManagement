@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>Add Article</h1>
 <div mat-dialog-content fxLayout="column">
   <mat-form-field>
-    <mat-select placeholder="Journal domain" [formControl]="journalsControl" required>
+    <mat-select placeholder="Journal" [formControl]="journalsControl" required>
       <mat-option *ngFor="let journal of journals" [value]="journal">
         {{journal.title}}
       </mat-option>

@@ -56,6 +56,28 @@ namespace ApiService.Controllers
             var list = Component.GetAllPublished(convertedId);
             return Ok(list);
         }
+
+
+        [Route("pendings")]
+        [HttpGet]
+        public IHttpActionResult GetArticlesByJournal([FromUri]string journalId)
+        {
+            if (String.IsNullOrEmpty(journalId))
+                return BadRequest("Journal Id invalid");
+            long convertedId;
+            try
+            {
+                convertedId = Convert.ToInt64(journalId);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Journal Id invalid: " + ex.Message);
+            }
+
+
+            var list = Component.GetAllByJournal(convertedId);
+            return Ok(list);
+        }
         //public override ArticleView Post([FromBody] ArticleView param)
         //{
         //    param.UserId = User.Identity.GetUserId();
@@ -184,7 +206,7 @@ namespace ApiService.Controllers
             return response;
         }
 
-        [Route("pendings")]
+        [Route("pendings2")]
         public IEnumerable<ArticleView> GetPendings()
         {
             var list = Component.GetAllByApprovalStatus((int)ApprovalStatus.InPending);

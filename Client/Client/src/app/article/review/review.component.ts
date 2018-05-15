@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {ArticleService, IArticle} from '../article.service';
+import {IJournal, JournalService} from "../../journal/journal.service";
 
 @Component({
   selector: 'review',
@@ -15,13 +16,22 @@ export class ReviewComponent implements OnInit {
   errorMessage: string;
 
   constructor(private dialog: MatDialog,
-              private articleService: ArticleService) {
+              private articleService: ArticleService,
+              private journalService: JournalService) {
   }
 
   ngOnInit(): void {
-    this.articleService.getPendingArticles()
-      .subscribe((result: IArticle[]) => {
-        this.pendingArticles = result;
+
+    this.journalService.getUserJournals()
+      .subscribe((result: IJournal[]) => {
+        result.forEach((journal) => {
+          this.articleService.getPendingArticles(journal.id)
+            .subscribe((result: IArticle[]) => {
+              this.pendingArticles.push(... result);
+            }, (error: any) => {
+              this.errorMessage = error;
+            });
+        });
       }, (error: any) => {
         this.errorMessage = error;
       });
@@ -42,7 +52,7 @@ export class ReviewComponent implements OnInit {
         console.log(result);
         let a = document.createElement("a");
         a.href = URL.createObjectURL(result);
-        if (result.type === "application/pdf"){
+        if (result.type === "application/pdf") {
           a.download = 'download.pdf';
         }
         if (result.type === "application/msword") {

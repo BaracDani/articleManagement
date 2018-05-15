@@ -60,5 +60,22 @@ namespace Business.Components
 
             return null;
         }
+
+        public IEnumerable<ArticleView> GetAllByJournal(long journalId)
+        {
+
+            try
+            {
+                var list = Repository.Filter(article => article.JournalId == journalId && article.ApprovalStatus == 1);
+                var result = list.ToArray().Select(EntityToView);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
+        }
     }
 }

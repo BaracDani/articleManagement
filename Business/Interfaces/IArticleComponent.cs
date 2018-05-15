@@ -10,6 +10,8 @@ namespace Business.Interfaces
         IEnumerable<ArticleView> GetAllByApprovalStatus(int approvalStatus);
 
         IEnumerable<ArticleView> GetAllPublished(long journalId);
+
+        IEnumerable<ArticleView> GetAllByJournal(long journalId);
     }
 }
 

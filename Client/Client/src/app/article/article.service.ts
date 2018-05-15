@@ -47,13 +47,14 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('getArticles')));
   }
 
-  getPendingArticles(): Observable<IArticle[]> {
+  getPendingArticles(id: number): Observable<IArticle[]> {
 
     let headers = new HttpHeaders();
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
     let url = this.commonService.getBaseUrl() + '/api/article/pendings';
+    let params = new HttpParams().set('journalId', id.toString());
 
-    return this._http.get(url, {headers: headers}).pipe(
+    return this._http.get(url, {headers: headers, params: params}).pipe(
       tap(_ => console.log(`Get pending articles`)),
       catchError(this.commonService.handleError<any>('getPendingArticles')));
   }

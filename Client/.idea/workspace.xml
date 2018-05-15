@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44c5f42d-e0c1-49c4-ab6c-454a8f42fc74" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../ApiService/uploads/358711558_PDP Form.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/app/homePage/publishedJournal/published-journal.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/app/homePage/publishedJournal/published-journal.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/app/homePage/publishedJournal/published-journal.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ApiService/Controllers/ArticleController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ApiService/Controllers/ArticleController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ApiService/Controllers/JournalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../ApiService/Controllers/JournalController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Business/Components/ArticleComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Business/Components/ArticleComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Business/Interfaces/IArticleComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../Business/Interfaces/IArticleComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/angular-material.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/angular-material.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/app/article/article.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/article/article.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/article/review/review.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/article/review/review.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/app/article/review/review.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/article/review/review.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/journal/journal.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/journal/journal.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/journal/journal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/journal/journal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/app/journal/journal.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/app/journal/journal.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,13 +21,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homePage.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/app/homePage/homePage.component.ts">
+      <file leaf-file-name="article.service.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/app/article/article.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="163">
+              <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
               <folding>
-                <element signature="e#0#40#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -64,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="journal.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="journal.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Client/src/app/journal/journal.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+            <state relative-caret-position="160">
+              <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="31" selection-end-column="9" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -76,11 +63,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="journal.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/app/journal/journal.service.ts">
+      <file leaf-file-name="review.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/app/article/review/review.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="86" column="71" lean-forward="true" selection-start-line="86" selection-start-column="71" selection-end-line="86" selection-end-column="71" />
+            <state relative-caret-position="180">
+              <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-article-dialog.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -90,18 +86,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
               <caret line="21" column="48" lean-forward="true" selection-start-line="21" selection-start-column="48" selection-end-line="26" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app-routing.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/app/app-routing.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -138,7 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>redirectUrl</find>
       <find>loginMessage</find>
       <find>NgModule</find>
       <find>isAuthenticated</find>
@@ -168,6 +151,7 @@
       <find>list</find>
       <find>ngif</find>
       <find>delete</find>
+      <find>getPendingArticles</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -212,13 +196,10 @@
         <option value="$PROJECT_DIR$/Client/src/app/admin/EditUser/edit-user-dialog.component.html" />
         <option value="$PROJECT_DIR$/Client/src/app/journal/AddJournal/add-journal-dialog.component.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/journal/AddJournal/add-journal-dialog.component.html" />
-        <option value="$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.html" />
         <option value="$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.ts" />
-        <option value="$PROJECT_DIR$/Client/src/app/article/review/review.component.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/article/review/review.component.html" />
         <option value="$PROJECT_DIR$/Client/src/app/homePage/publishedJournal/published-journal.component.css" />
         <option value="$PROJECT_DIR$/Client/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/Client/src/app/article/article.service.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/homePage/publishedJournal/published-journal.component.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/homePage/publishedJournal/published-journal.component.html" />
         <option value="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.ts" />
@@ -227,6 +208,9 @@
         <option value="$PROJECT_DIR$/Client/src/app/journal/journal.service.ts" />
         <option value="$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html" />
         <option value="$PROJECT_DIR$/Client/src/app/journal/journal.component.ts" />
+        <option value="$PROJECT_DIR$/Client/src/app/article/article.service.ts" />
+        <option value="$PROJECT_DIR$/Client/src/app/article/review/review.component.ts" />
+        <option value="$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.html" />
       </list>
     </option>
   </component>
@@ -291,6 +275,32 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="admin" type="462c0819:PsiDirectoryNode" />
               <item name="EditUser" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
+              <item name="AddArticle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Client" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="Client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
+              <item name="review" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Client" type="b2602c69:ProjectViewProjectNode" />
@@ -437,12 +447,12 @@
       <workItem from="1525692946240" duration="151000" />
       <workItem from="1526301910857" duration="285000" />
       <workItem from="1526365089674" duration="206000" />
-      <workItem from="1526399191300" duration="8754000" />
+      <workItem from="1526399191300" duration="10276000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143958000" />
+    <option name="totallyTimeSpent" value="145480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -697,13 +707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="83" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1300">
@@ -714,36 +717,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/article/review/review.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="61" column="3" selection-start-line="61" selection-start-column="3" selection-end-line="61" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/article/review/review.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="38" column="19" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="19" />
           <folding>
             <element signature="e#188#242#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/article/article.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="75" column="60" lean-forward="true" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -834,13 +813,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/app/journal/journal.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="86" column="71" lean-forward="true" selection-start-line="86" selection-start-column="71" selection-end-line="86" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/homePage/homePage.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -848,13 +820,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/article/review/review.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Client/src/app/journal/journal.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="65" column="25" selection-start-line="65" selection-start-column="25" selection-end-line="65" selection-end-column="25" />
+        <state relative-caret-position="160">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="31" selection-end-column="9" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/journal/journal.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="53" column="73" lean-forward="true" selection-start-line="53" selection-start-column="73" selection-end-line="54" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/article/article.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/article/review/review.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="30" column="32" lean-forward="true" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/app/article/AddArticle/add-article-dialog.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
         </state>
       </provider>
     </entry>
