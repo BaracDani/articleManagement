@@ -1,18 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {ArticleService, IArticle} from '../article.service';
-import {IJournal, JournalService} from "../../journal/journal.service";
+import {IJournal, JournalService} from '../../journal/journal.service';
+
+interface IJournalArticles {
+  journal: IJournal;
+  articles: IArticle[];
+}
 
 @Component({
   selector: 'review',
   templateUrl: './review.component.html',
   styleUrls: ['./review.component.css']
 })
-
 export class ReviewComponent implements OnInit {
 
   pageTitle: string = 'Review articles';
-  pendingArticles: IArticle[] = [];
+  journalArticles: IJournalArticles[] = [];
   errorMessage: string;
 
   constructor(private dialog: MatDialog,
@@ -27,7 +31,11 @@ export class ReviewComponent implements OnInit {
         result.forEach((journal) => {
           this.articleService.getPendingArticles(journal.id)
             .subscribe((result: IArticle[]) => {
-              this.pendingArticles.push(... result);
+              let journalArticle = {
+                journal: journal,
+                articles: result
+              };
+              this.journalArticles.push(journalArticle);
             }, (error: any) => {
               this.errorMessage = error;
             });

@@ -4,4 +4,62 @@
       <button mat-button (click)="createArticle()">Create Article</button>
     </div>
   </div>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          In pending Articles
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let article of pendingArticles;">
+          <span fxFlex>{{article.title}}</span>
+          <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          In review Articles
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let article of inReviewArticles;">
+          <span fxFlex>{{article.title}}</span>
+          <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Approved Articles
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let article of approvedArticles;">
+          <span fxFlex>{{article.title}}</span>
+          <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Rejected Articles
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let article of rejectedArticles;">
+          <span fxFlex>{{article.title}}</span>
+          <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
