@@ -28,11 +28,14 @@ namespace DataAccess.Entities
 
         public virtual List<Journal> Journals { get; set; }
 
+        public virtual List<UserDomain> UserDomains { get; set; }
+
         public ApplicationUser()
         {
             this.Articles = new List<Article>();
             this.ReviewedArticles = new List<ReviewedArticle>();
             this.Journals = new List<Journal>();
+            this.UserDomains = new List<UserDomain>();
         }
 
 

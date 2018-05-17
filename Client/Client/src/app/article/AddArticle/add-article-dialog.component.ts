@@ -30,7 +30,7 @@ export class AddArticleDialog {
 
   ngOnInit() {
 
-    this.journalService.getJournals()
+    this.journalService.getUnpublishedJournals()
       .subscribe((result: IJournal[]) => {
         this.journals = result;
       }, (error: any) => {

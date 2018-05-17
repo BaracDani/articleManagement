@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {ArticleService, IArticle} from '../article.service';
 import {IJournal, JournalService} from '../../journal/journal.service';
+import {IUserModel} from "../../admin/admin.model";
 
 interface IJournalArticles {
   journal: IJournal;
@@ -45,8 +46,15 @@ export class ReviewComponent implements OnInit {
       });
   }
 
-  approveArticle(article: IArticle): void {
-    this.articleService.approveArticle(article).subscribe((result: any) => {
+  approveArticle(article: IArticle, journal: IJournal): void {
+    let reviewers: IUserModel[] = [];
+    this.articleService.getUsersOfDomain(journal.domainId, article.userId).subscribe((users: any) => {
+      console.log(users);
+      reviewers=users;
+    }, (error: any) => {
+      this.errorMessage = error;
+    });
+    this.articleService.approveArticle(article, reviewers).subscribe((result: any) => {
       console.log(result);
     }, (error: any) => {
       this.errorMessage = error;

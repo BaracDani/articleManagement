@@ -12,7 +12,7 @@ using ApiService.Models;
 
 namespace ApiService.Controllers
 {
-    [Authorize(Roles = "Editor")]
+    [Authorize]
     [RoutePrefix("api/journal")]
     public class JournalController : CrudApiController<JournalView, IJournalComponent>
     {
@@ -29,6 +29,15 @@ namespace ApiService.Controllers
             return list;
         }
 
+        [Route("unpublishedJournals")]
+        [HttpGet]
+        public IEnumerable<JournalView> GetUnpublishedJournals()
+        {
+            var list = Component.GetAllUnpublished();
+            return list;
+        }
+
+        [Authorize(Roles = "Editor")]
         public override JournalView Post([FromBody] JournalView param)
         {
             param.UserId = User.Identity.GetUserId();
@@ -41,6 +50,7 @@ namespace ApiService.Controllers
         }
 
 
+        [Authorize(Roles = "Editor")]
         [Route("userJournals")]
         public async Task<IHttpActionResult> GetUserJournals()
         {

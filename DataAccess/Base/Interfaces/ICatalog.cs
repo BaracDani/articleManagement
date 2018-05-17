@@ -9,13 +9,13 @@ namespace DataAccess.Base.Interfaces
 {
     public interface ICatalog : IUnitOfWork
     {
-        IUserRepository UserRepository { get; }
-
         IActivityLogRepository ActivityLogRepository { get; }
 
         IArticleRepository ArticleRepository { get; }
 
         IReviewedArticleRepository ReviewedArticleRepository { get; }
+
+        IUserDomainRepository UserDomainRepository { get; }
 
         IDomainRepository DomainRepository { get; }
 

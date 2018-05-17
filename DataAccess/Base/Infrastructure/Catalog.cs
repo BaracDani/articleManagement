@@ -11,13 +11,13 @@ namespace DataAccess.Base.Infrastructure
     {
         private IActivityLogRepository _activityLogRepository;
 
-        private IUserRepository _userRepository;
-
         private IArticleRepository _articleRepository;
 
         private IReviewedArticleRepository _reviewedArticleRepository;
 
         private IDomainRepository _domainRepository;
+
+        private IUserDomainRepository _userDomainRepository;
 
         private IJournalRepository _journalRepository;
 
@@ -25,11 +25,11 @@ namespace DataAccess.Base.Infrastructure
 
         public IActivityLogRepository ActivityLogRepository => _activityLogRepository ?? (_activityLogRepository = new ActivityLogRepository(DatabaseFactory));
 
-        public IUserRepository UserRepository => _userRepository ?? (_userRepository = new UserRepository(DatabaseFactory));
-    
         public IArticleRepository ArticleRepository => _articleRepository ?? (_articleRepository = new ArticleRepository(DatabaseFactory));
 
         public IReviewedArticleRepository ReviewedArticleRepository => _reviewedArticleRepository ?? (_reviewedArticleRepository = new ReviewedArticleRepository(DatabaseFactory));
+
+        public IUserDomainRepository UserDomainRepository => _userDomainRepository ?? (_userDomainRepository = new UserDomainRepository(DatabaseFactory));
 
         public IDomainRepository DomainRepository => _domainRepository ?? (_domainRepository = new DomainRepository(DatabaseFactory));
 

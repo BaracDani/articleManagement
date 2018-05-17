@@ -45,7 +45,10 @@ namespace DataAccess.Base.Infrastructure
             //relations for ReviewedArticles
             modelBuilder.Entity<ReviewedArticle>().HasKey(c => new { c.UserId, c.ArticleId });
             modelBuilder.Entity<ReviewedArticle>().Ignore(rw => rw.Id);
-            
+
+            modelBuilder.Entity<UserDomain>().HasKey(c => new { c.UserId, c.DomainId });
+            modelBuilder.Entity<UserDomain>().Ignore(rw => rw.Id);
+
         }
 
         public static ApplicationDbContext Create()

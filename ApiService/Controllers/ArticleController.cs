@@ -181,7 +181,6 @@ namespace ApiService.Controllers
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
             
             string localFilePath = fileName;
-            int fileSize;
 
             localFilePath = HttpContext.Current.Server.MapPath(fileName);
 

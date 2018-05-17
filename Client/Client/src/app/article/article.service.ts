@@ -7,6 +7,7 @@ import {CommonService} from '../core/repository/common.service';
 import 'rxjs/add/operator/finally';
 import {UserProfileService} from "../account/user.profile";
 import {ResponseContentType} from "@angular/http";
+import {IUserModel} from "../admin/admin.model";
 
 
 export interface IArticle {
@@ -26,6 +27,7 @@ export interface IAddArticle {
   abstract: string;
   author: string;
 }
+
 @Injectable()
 export class ArticleService {
 
@@ -91,14 +93,27 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('addArticle')));
   }
 
-  approveArticle(data: IArticle): Observable<any> {
+  approveArticle(data: IArticle, reviewers: any[]): Observable<any> {
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
-    let url = this.commonService.getBaseUrl() + '/api/article/approve';
+    let url = this.commonService.getBaseUrl() + '/api/article/editorApprove';
 
     return this._http.put(url, data, {headers: headers}).pipe(
       tap(_ => console.log(`approveArticle`)),
       catchError(this.commonService.handleError<any>('approveArticle')));
+  }
+
+  getUsersOfDomain(domainId: number, userId: string): Observable<IUserModel[]> {
+
+    let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/domain/users';
+    let params = new HttpParams().set('domainId', domainId.toString());
+    params = params.append('userId', userId);
+
+    return this._http.get(url, {headers: headers, params: params}).pipe(
+      tap(_ => console.log(`Get users`)),
+      catchError(this.commonService.handleError<any>('getUsers')));
   }
 
 }

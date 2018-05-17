@@ -72,6 +72,7 @@
     <Compile Include="Entities\AbstractClasses\IBaseEntity.cs" />
     <Compile Include="Entities\ActivityLog.cs" />
     <Compile Include="Entities\ApplicationUser.cs" />
+    <Compile Include="Entities\UserDomain.cs" />
     <Compile Include="Entities\Domain.cs" />
     <Compile Include="Entities\Journal.cs" />
     <Compile Include="Entities\ReviewedArticle.cs" />
@@ -80,9 +81,9 @@
     <Compile Include="Interfaces\IActivityLogRepository.cs" />
     <Compile Include="Interfaces\IJournalRepository.cs" />
     <Compile Include="Interfaces\IDomainRepository.cs" />
+    <Compile Include="Interfaces\IUserDomainRepository.cs" />
     <Compile Include="Interfaces\IReviewedArticleRepository.cs" />
     <Compile Include="Interfaces\IArticleRepository.cs" />
-    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Migrations\201804021552319_InitialMigration.cs" />
     <Compile Include="Migrations\201804021552319_InitialMigration.Designer.cs">
       <DependentUpon>201804021552319_InitialMigration.cs</DependentUpon>
@@ -131,14 +132,22 @@
     <Compile Include="Migrations\201805141604348_ArticleFileUpload.Designer.cs">
       <DependentUpon>201805141604348_ArticleFileUpload.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805171623035_AddUserDomain.cs" />
+    <Compile Include="Migrations\201805171623035_AddUserDomain.Designer.cs">
+      <DependentUpon>201805171623035_AddUserDomain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805171632509_AddUserDomain2.cs" />
+    <Compile Include="Migrations\201805171632509_AddUserDomain2.Designer.cs">
+      <DependentUpon>201805171632509_AddUserDomain2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActivityLogRepository.cs" />
     <Compile Include="Repositories\DomainRepository.cs" />
     <Compile Include="Repositories\JournalRepository.cs" />
+    <Compile Include="Repositories\UserDomainRepository.cs" />
     <Compile Include="Repositories\ReviewedArticleRepository.cs" />
     <Compile Include="Repositories\ArticleRepository.cs" />
-    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -180,6 +189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805141604348_ArticleFileUpload.resx">
       <DependentUpon>201805141604348_ArticleFileUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805171623035_AddUserDomain.resx">
+      <DependentUpon>201805171623035_AddUserDomain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805171632509_AddUserDomain2.resx">
+      <DependentUpon>201805171632509_AddUserDomain2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

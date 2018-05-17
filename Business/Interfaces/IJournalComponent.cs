@@ -8,6 +8,7 @@ namespace Business.Interfaces
     public interface IJournalComponent : IBaseComponent<JournalView>
     {
         IEnumerable<JournalView> GetAllPublished();
+        IEnumerable<JournalView> GetAllUnpublished();
     }
 }
 

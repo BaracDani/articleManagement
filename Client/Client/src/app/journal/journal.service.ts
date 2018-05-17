@@ -48,6 +48,17 @@ export class JournalService {
       catchError(this.commonService.handleError<any>('getJournals')));
   }
 
+  getUnpublishedJournals(): Observable<IJournal[]> {
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/journal/unpublishedJournals';
+
+    return this._http.get(url, {headers: headers}).pipe(
+      tap(_ => console.log(`Get unp journals`)),
+      catchError(this.commonService.handleError<any>('getUnpJournals')));
+  }
+
   getJournalArticles(id: number): Observable<IArticle[]> {
 
     let headers = new HttpHeaders({'Content-Type': 'application/json'});

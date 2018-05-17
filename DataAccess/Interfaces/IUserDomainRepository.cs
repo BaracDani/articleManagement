@@ -3,7 +3,7 @@ using DataAccess.Entities;
 
 namespace DataAccess.Interfaces
 {
-    public interface IUserRepository : IBaseEntityRepository<User>
+    public interface IUserDomainRepository : IBaseEntityRepository<UserDomain>
     {
 
     }

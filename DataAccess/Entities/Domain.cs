@@ -11,12 +11,14 @@ namespace DataAccess.Entities
         public Domain()
         {
             this.Journals = new List<Journal>();
+            this.UserDomains = new List<UserDomain>();
         }
 
         public string Name { get; set; }
         public string Description { get; set; }
 
         public virtual ICollection<Journal> Journals { get; set; }
+        public virtual List<UserDomain> UserDomains { get; set; }
 
         [NotMapped]
         public override string Table => nameof(Domain);

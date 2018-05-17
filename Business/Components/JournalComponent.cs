@@ -43,5 +43,20 @@ namespace Business.Components
 
             return null;
         }
+        public IEnumerable<JournalView> GetAllUnpublished()
+        {
+            try
+            {
+                var list = Repository.Filter(journal => journal.IsPublished == false);
+                var result = list.ToArray().Select(EntityToView);
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
+        }
     }
 }
