@@ -56,8 +56,17 @@
 
       <mat-list role="list">
         <mat-list-item role="listitem" *ngFor="let article of rejectedArticles;">
-          <span fxFlex>{{article.title}}</span>
-          <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
+          <div fxLayout="row" matLine>
+            <span fxFlex>{{article.title}}</span>
+            <button mat-button (click)="downloadFile(article.filePath)">Download pdf</button>
+          </div>
+          <div matLine><a (click)="article.seeMore = !article.seeMore" style="cursor: pointer">
+            <span *ngIf="!article.seeMore">See comments</span>
+            <span *ngIf="article.seeMore">Comments:</span>
+          </a></div>
+          <div matLine *ngIf="article.seeMore">
+            <span matLine *ngFor="let comment of article.reviews;">{{comment}}</span>
+          </div>
         </mat-list-item>
       </mat-list>
     </mat-expansion-panel>

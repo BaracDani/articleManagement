@@ -157,4 +157,16 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('getUsers')));
   }
 
+  getReviewsForArticle(article: IArticle): Observable<any[]> {
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/reviewsForArticle';
+    let params = new HttpParams().set('articleId', article.id.toString());
+
+    return this._http.get(url, {headers: headers, params: params}).pipe(
+      tap(_ => console.log(`Get reviews for articles`)),
+      catchError(this.commonService.handleError<any>('getReviewsForArticles')));
+  }
+
 }

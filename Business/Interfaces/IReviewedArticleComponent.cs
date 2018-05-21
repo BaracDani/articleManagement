@@ -14,6 +14,8 @@ namespace Business.Interfaces
 
         IEnumerable<ArticleView> GetArticlesInReview(string userId);
 
+        ReviewedArticleView[] GetReviewsForArticle(long articleId);
+
     }
 }
 

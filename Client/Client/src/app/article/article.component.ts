@@ -13,7 +13,7 @@ export class ArticleComponent implements OnInit {
 
   pageTitle: string = 'Article';
   approvedArticles: IArticle[] = [];
-  rejectedArticles: IArticle[] = [];
+  rejectedArticles: any[] = [];
   pendingArticles: IArticle[] = [];
   inReviewArticles: IArticle[] = [];
   errorMessage: string;
@@ -33,6 +33,14 @@ export class ArticleComponent implements OnInit {
         this.rejectedArticles = result.filter((article)=> article.approvalStatus === 3);
         this.inReviewArticles = result.filter((article)=> article.approvalStatus === 4);
         this.pendingArticles = result.filter((article)=> article.approvalStatus === 1);
+        this.rejectedArticles.forEach((article) => {
+          this.articleService.getReviewsForArticle(article).subscribe((reviews: any[]) => {
+            article.reviews = reviews.filter((review) => !!review);
+          }, (error: any) => {
+            this.errorMessage = error;
+          });
+        });
+
       }, (error: any) => {
         this.errorMessage = error;
       });

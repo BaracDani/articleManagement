@@ -115,5 +115,22 @@ namespace Business.Components
 
             return null;
         }
+
+
+        public ReviewedArticleView[] GetReviewsForArticle(long articleId)
+        {
+            try
+            {
+                var list = Repository.Filter(article => article.ArticleId == articleId);
+                
+                return ReviewedArticleView.FromEntities(list.ToArray());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+            return null;
+        }
     }
 }

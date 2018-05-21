@@ -67,6 +67,27 @@ namespace ApiService.Controllers
             return list;
         }
 
+        [Route("reviewsForArticle")]
+        [HttpGet]
+        public IHttpActionResult GetReviewsForArticle([FromUri]string articleId)
+        {
+            if (String.IsNullOrEmpty(articleId))
+                return BadRequest("Article Id invalid");
+            long convertedId;
+            try
+            {
+                convertedId = Convert.ToInt64(articleId);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Article Id invalid: " + ex.Message);
+            }
+
+            var list = ReviewedArticleComponent.GetReviewsForArticle(convertedId);
+            var resultedList = list.Select((reviewedArticle) => { return reviewedArticle.Comment; });
+            return Ok(resultedList);
+        }
+
         [Authorize(Roles = "Editor")]
         [Route("pendings")]
         [HttpGet]
