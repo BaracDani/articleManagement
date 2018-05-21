@@ -6,6 +6,7 @@ import {AdminPageComponent} from './admin/admin-page.component';
 import {ArticleComponent} from './article/article.component';
 import {ReviewComponent} from './article/review/review.component';
 import {JournalComponent} from './journal/journal.component';
+import {ReviewArticleComponent} from './article/reviewArticle/review-article.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -23,6 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'review', canActivate: [AuthGuard], component: ReviewComponent
+  },
+  {
+    path: 'reviewArticle', canActivate: [AuthGuard], component: ReviewArticleComponent
   }
 ];
 

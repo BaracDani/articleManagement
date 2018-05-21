@@ -7,8 +7,13 @@ namespace Business.Interfaces
 {
     public interface IReviewedArticleComponent : IBaseComponent<ReviewedArticleView>
     {
-        int GetNumberofApproved(ReviewedArticleView reviewedArticle);
+        ReviewedArticleView GetReviewedArticle(string userId, long articleId);
+        bool CheckIfApproved(ReviewedArticleView reviewedArticle);
+
         int GetNumberofReviewed(ReviewedArticleView reviewedArticle);
+
+        IEnumerable<ArticleView> GetArticlesInReview(string userId);
+
     }
 }
 

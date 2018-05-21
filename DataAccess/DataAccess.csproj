@@ -140,6 +140,18 @@
     <Compile Include="Migrations\201805171632509_AddUserDomain2.Designer.cs">
       <DependentUpon>201805171632509_AddUserDomain2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805172015538_AddReviewStatus.cs" />
+    <Compile Include="Migrations\201805172015538_AddReviewStatus.Designer.cs">
+      <DependentUpon>201805172015538_AddReviewStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805172021321_AddReviewPoints.cs" />
+    <Compile Include="Migrations\201805172021321_AddReviewPoints.Designer.cs">
+      <DependentUpon>201805172021321_AddReviewPoints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805172043040_RemoveApprovedColumn.cs" />
+    <Compile Include="Migrations\201805172043040_RemoveApprovedColumn.Designer.cs">
+      <DependentUpon>201805172043040_RemoveApprovedColumn.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActivityLogRepository.cs" />
@@ -195,6 +207,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805171632509_AddUserDomain2.resx">
       <DependentUpon>201805171632509_AddUserDomain2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805172015538_AddReviewStatus.resx">
+      <DependentUpon>201805172015538_AddReviewStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805172021321_AddReviewPoints.resx">
+      <DependentUpon>201805172021321_AddReviewPoints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805172043040_RemoveApprovedColumn.resx">
+      <DependentUpon>201805172043040_RemoveApprovedColumn.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

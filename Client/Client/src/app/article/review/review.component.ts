@@ -16,7 +16,7 @@ interface IJournalArticles {
 })
 export class ReviewComponent implements OnInit {
 
-  pageTitle: string = 'Review articles';
+  pageTitle: string = 'Review journals';
   journalArticles: IJournalArticles[] = [];
   errorMessage: string;
 
@@ -26,8 +26,12 @@ export class ReviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getUnpublishedUserJournals();
+  }
 
-    this.journalService.getUserJournals()
+  getUnpublishedUserJournals(): void {
+    this.journalArticles = [];
+    this.journalService.getUnpublishedUserJournals()
       .subscribe((result: IJournal[]) => {
         result.forEach((journal) => {
           this.articleService.getPendingArticles(journal.id)
@@ -49,18 +53,26 @@ export class ReviewComponent implements OnInit {
   approveArticle(article: IArticle, journal: IJournal): void {
     let reviewers: IUserModel[] = [];
     this.articleService.getUsersOfDomain(journal.domainId, article.userId).subscribe((users: any) => {
-      console.log(users);
-      reviewers=users;
-    }, (error: any) => {
-      this.errorMessage = error;
-    });
-    this.articleService.approveArticle(article, reviewers).subscribe((result: any) => {
-      console.log(result);
+      reviewers = users;
+
+      let userIds: string[] = reviewers.map((user) => user.id);
+      this.articleService.approveArticle(article, userIds).subscribe((result: any) => {
+        this.getUnpublishedUserJournals();
+      }, (error: any) => {
+        this.errorMessage = error;
+      });
     }, (error: any) => {
       this.errorMessage = error;
     });
   }
 
+  rejectArticle(article: IArticle): void {
+    this.articleService.rejectArticle(article).subscribe((result: any) => {
+      this.getUnpublishedUserJournals();
+    }, (error: any) => {
+      this.errorMessage = error;
+    });
+  }
 
   downloadFile(filePath: string) {
     this.articleService.getFile(filePath)

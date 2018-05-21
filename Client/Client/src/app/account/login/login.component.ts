@@ -47,5 +47,6 @@ export class LoginComponent {
 
   onLoginResponse(response: any) {
     this.loginMessage = (response.access_token ? "Login with success!" : "Invalid data!");
+    this.userService.emitLoginChange();
   }
 }

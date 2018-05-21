@@ -72,6 +72,17 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('getUserArticles')));
   }
 
+  getUserToReviewArticles(): Observable<IArticle[]> {
+
+    let headers = new HttpHeaders();
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/inReview';
+
+    return this._http.get(url, {headers: headers}).pipe(
+      tap(_ => console.log(`Get in review articles`)),
+      catchError(this.commonService.handleError<any>('getInReviewArticles')));
+  }
+
   getFile(filePath: string): Observable<any> {
     let headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
@@ -93,14 +104,44 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('addArticle')));
   }
 
-  approveArticle(data: IArticle, reviewers: any[]): Observable<any> {
+  approveArticle(article: IArticle, userIds: string[]): Observable<any> {
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
     let url = this.commonService.getBaseUrl() + '/api/article/editorApprove';
 
-    return this._http.put(url, data, {headers: headers}).pipe(
-      tap(_ => console.log(`approveArticle`)),
-      catchError(this.commonService.handleError<any>('approveArticle')));
+    return this._http.put(url, {article: article, userIds}, {headers: headers}).pipe(
+      tap(_ => console.log(`Editor approveArticle`)),
+      catchError(this.commonService.handleError<any>('Editor approveArticle')));
+  }
+
+  rejectArticle(article: IArticle): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/editorReject';
+
+    return this._http.put(url, article, {headers: headers}).pipe(
+      tap(_ => console.log(`Editor rejectArticle`)),
+      catchError(this.commonService.handleError<any>('Editor rejectArticle')));
+  }
+
+  reviewArticle(article: IArticle, reviewPoints: number): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/userReview';
+
+    return this._http.put(url, {article: article, reviewPoints: reviewPoints}, {headers: headers}).pipe(
+      tap(_ => console.log(`UserReview approveArticle`)),
+      catchError(this.commonService.handleError<any>('UserReview approveArticle')));
+  }
+
+  abstainReviewArticle(article: IArticle): Observable<any> {
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
+    let url = this.commonService.getBaseUrl() + '/api/article/userReviewAbstain';
+
+    return this._http.put(url, article, {headers: headers}).pipe(
+      tap(_ => console.log(`UserReview Abstain approveArticle`)),
+      catchError(this.commonService.handleError<any>('UserReview Abstain approveArticle')));
   }
 
   getUsersOfDomain(domainId: number, userId: string): Observable<IUserModel[]> {

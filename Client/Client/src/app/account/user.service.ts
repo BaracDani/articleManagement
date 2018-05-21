@@ -7,16 +7,24 @@ import {Router} from '@angular/router';
 import {CommonService} from '../core/repository/common.service';
 import {UserProfileService} from './user.profile';
 import {IRegisterUser} from '../register/user';import 'rxjs/add/operator/finally';
+import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class UserService {
   redirectUrl: string;
+
+  private emitChangeSource = new Subject<any>();
+  loginChangeEmitted$ = this.emitChangeSource.asObservable();
 
   constructor(private _http: HttpClient,
               private router: Router,
               private authProfile: UserProfileService,
               private commonService: CommonService) {
 
+  }
+
+  emitLoginChange() {
+    this.emitChangeSource.next();
   }
 
   isAuthenticated() {
@@ -47,6 +55,22 @@ export class UserService {
       );
     }
     return validToken && !isTokenExpired && isAdmin;
+  }
+
+  isEditor() {
+    let profile = this.authProfile.getProfile();
+    let validToken = profile.token != "" && profile.token != null;
+    let isTokenExpired = this.isTokenExpired(profile);
+    let isEditor: boolean = false;
+    if (profile && profile.roles && profile.roles.length > 0) {
+      profile.roles.forEach((role: string) => {
+          if (role === 'Editor') {
+            isEditor = true;
+          }
+        }
+      );
+    }
+    return validToken && !isTokenExpired && isEditor;
   }
 
   isTokenExpired(profile: IProfile) {

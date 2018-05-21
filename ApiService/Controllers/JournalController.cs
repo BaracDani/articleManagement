@@ -67,6 +67,24 @@ namespace ApiService.Controllers
             return NotFound();
         }
 
+        [Authorize(Roles = "Editor")]
+        [Route("userJournalsUnpublished")]
+        public async Task<IHttpActionResult> GetUserJournalsUnpublished()
+        {
+            string userId = User.Identity.GetUserId();
+            var user = await this.AppUserManager.FindByIdAsync(userId);
+
+            if (user != null)
+            {
+                var list = user.Journals;
+                var convertedList = JournalView.FromEntities(list.ToArray());
+                convertedList = convertedList.Where(journal => journal.IsPublished == false).ToArray();
+                return Ok(convertedList);
+            }
+
+            return NotFound();
+        }
+
 
     }
 }

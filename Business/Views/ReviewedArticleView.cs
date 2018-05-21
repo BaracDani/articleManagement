@@ -7,7 +7,9 @@ namespace Business.Views
 {
     public class ReviewedArticleView : BaseView
     {
-        public bool Approved { get; set; }
+        public int ReviewStatus { get; set; }
+
+        public int ReviewPoints { get; set; }
 
         public long ArticleId { get; set; }
 
@@ -21,7 +23,8 @@ namespace Business.Views
             return new ReviewedArticle
             {
                 Id = item.Id,
-                Approved = item.Approved,
+                ReviewStatus = item.ReviewStatus,
+                ReviewPoints = item.ReviewPoints,
                 ArticleId = item.ArticleId,
                 UserId = item.UserId
             };
@@ -35,7 +38,8 @@ namespace Business.Views
             return new ReviewedArticleView
             {
                 Id = item.Id,
-                Approved = item.Approved,
+                ReviewStatus = item.ReviewStatus,
+                ReviewPoints = item.ReviewPoints,
                 ArticleId = item.ArticleId,
                 UserId = item.UserId
             };

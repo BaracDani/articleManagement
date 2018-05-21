@@ -3,13 +3,13 @@
     <mat-expansion-panel *ngFor="let journal of journalArticles;">
       <mat-expansion-panel-header>
         <mat-panel-title>
-          {{journal.journal.title}}
+          {{journal.journal.title}} ({{journal.articles.length}})
         </mat-panel-title>
       </mat-expansion-panel-header>
 
+      <div *ngIf="journal.articles && journal.articles.length >0">In pending articles:</div>
       <mat-card class="" *ngFor="let article of journal.articles;">
         <mat-card-header>
-          <div mat-card-avatar *ngIf="article.avatar"></div>
           <mat-card-title>{{article.title}}</mat-card-title>
           <mat-card-subtitle>Created date: {{article.deadline |  date:'MM/dd/yyyy'}}</mat-card-subtitle>
         </mat-card-header>

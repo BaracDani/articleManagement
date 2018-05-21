@@ -24,6 +24,8 @@ import {JournalComponent} from './journal/journal.component';
 import {JournalService} from './journal/journal.service';
 import {AddJournalDialog} from './journal/AddJournal/add-journal-dialog.component';
 import {PublishedJournalComponent} from './homePage/publishedJournal/published-journal.component';
+import {ReviewArticleComponent} from './article/reviewArticle/review-article.component';
+import {ReviewArticleDialog} from './article/reviewArticle/ArticleReviewDialog/review-article-dialog.component';
 
 
 @NgModule({
@@ -37,7 +39,9 @@ import {PublishedJournalComponent} from './homePage/publishedJournal/published-j
     AddArticleDialog,
     ArticleComponent,
     ReviewComponent,
-    PublishedJournalComponent
+    PublishedJournalComponent,
+    ReviewArticleComponent,
+    ReviewArticleDialog
   ],
   imports: [
     AlertModule.forRoot(),
@@ -52,7 +56,7 @@ import {PublishedJournalComponent} from './homePage/publishedJournal/published-j
     LayoutModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [EditUserDialog, AddArticleDialog, AddJournalDialog],
+  entryComponents: [EditUserDialog, AddArticleDialog, AddJournalDialog, ReviewArticleDialog],
   providers: [CommonService, AdminService, ArticleService, JournalService],
   bootstrap: [AppComponent]
 })

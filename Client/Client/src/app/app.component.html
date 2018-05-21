@@ -42,9 +42,10 @@
       <mat-nav-list>
 
         <a mat-list-item routerLink="/home">Home</a>
-        <a mat-list-item routerLink="/journal" *ngIf="authService.isAuthenticated()">Journal</a>
+        <a mat-list-item routerLink="/journal" *ngIf="authService.isEditor()">Journal</a>
         <a mat-list-item routerLink="/article" *ngIf="authService.isAuthenticated()">Article</a>
-        <a mat-list-item routerLink="/review" *ngIf="authService.isAuthenticated()">Review Articles</a>
+        <a mat-list-item routerLink="/reviewArticle" *ngIf="authService.isAuthenticated()">Review Article</a>
+        <a mat-list-item routerLink="/review" *ngIf="authService.isEditor()">Review Journals</a>
         <a mat-list-item routerLink="/login" *ngIf="!authService.isAuthenticated()">Login</a>
         <a mat-list-item routerLink="/register" *ngIf="!authService.isAuthenticated()">Register</a>
         <a mat-list-item routerLink="/admin" *ngIf="authService.isUserAdmin()">Admin</a>

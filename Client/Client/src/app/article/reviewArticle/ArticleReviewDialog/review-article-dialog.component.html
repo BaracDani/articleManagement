@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Review Article</h1>
+<div mat-dialog-content fxLayout="column">
+
+  <mat-form-field>
+    <textarea matInput placeholder="Comment" [(ngModel)]="comment"></textarea>
+  </mat-form-field>
+
+  <mat-radio-group [(ngModel)]="reviewPoints">
+    <mat-radio-button color="primary"  value="1">Strong reject</mat-radio-button>
+    <mat-radio-button color="primary"  value="2">Reject</mat-radio-button>
+    <mat-radio-button color="primary"  value="0">Neutral</mat-radio-button>
+    <mat-radio-button color="primary"  value="3">Accept</mat-radio-button>
+    <mat-radio-button color="primary"  value="4">Strong Accept</mat-radio-button>
+  </mat-radio-group>
+
+  <span *ngIf="errorMessage" style="color: red">{{errorMessage}}</span>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onReviewArticle()">Submit</button>
+</div>

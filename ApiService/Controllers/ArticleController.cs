@@ -57,7 +57,17 @@ namespace ApiService.Controllers
             return Ok(list);
         }
 
+        [Route("inReview")]
+        [HttpGet]
+        public IEnumerable<ArticleView> GetInReviewArticles()
+        {
 
+            string userId = User.Identity.GetUserId();
+            var list = ReviewedArticleComponent.GetArticlesInReview(userId);
+            return list;
+        }
+
+        [Authorize(Roles = "Editor")]
         [Route("pendings")]
         [HttpGet]
         public IHttpActionResult GetArticlesByJournal([FromUri]string journalId)
@@ -228,41 +238,109 @@ namespace ApiService.Controllers
             return NotFound();
         }
 
-        [Route("approve")]
+        [Authorize(Roles = "Editor")]
+        [Route("editorApprove")]
         [HttpPut]
-        public IHttpActionResult ApproveArticle([FromBody] ArticleView param)
+        public IHttpActionResult ApproveArticle([FromBody] UsersToReview param)
         {
-            ReviewedArticleView reviewedArticle = new ReviewedArticleView();
-            reviewedArticle.UserId = User.Identity.GetUserId();
-            reviewedArticle.ArticleId = param.Id;
-            reviewedArticle.Approved = true;
-            var item = ReviewedArticleComponent.Create(reviewedArticle);
-            int numberOfApproved = ReviewedArticleComponent.GetNumberofReviewed(reviewedArticle);
-            if(numberOfApproved == 3)
+            foreach (string userId in param.UserIds)
             {
-                bool isApproved = ReviewedArticleComponent.GetNumberofApproved(reviewedArticle) > 1;
+                ReviewedArticleView reviewedArticle = new ReviewedArticleView();
+                reviewedArticle.UserId = userId;
+                reviewedArticle.ArticleId = param.Article.Id;
+                var item = ReviewedArticleComponent.Create(reviewedArticle);
+                param.Article.ApprovalStatus = (int)ApprovalStatus.InReview;
+                if (item == null)
+                {
+                    return BadRequest("Server crashed! Review was not added");
+                }
+            }
+
+            if (param.UserIds.ToArray().Length > 0)
+            {
+                bool rez = Component.Update(param.Article);
+            }
+            return Ok("Users added for review");
+        }
+
+        [Authorize(Roles = "Editor")]
+        [Route("editorReject")]
+        [HttpPut]
+        public IHttpActionResult RejectArticle([FromBody] ArticleView param)
+        {
+            param.ApprovalStatus = (int)ApprovalStatus.Rejected;
+            bool rez = Component.Update(param);
+            if (rez)
+            {
+                return Ok("Article rejected succesful");
+            }
+
+            return Ok("Article not rejected succesful");
+        }
+
+        [Route("userReview")]
+        [HttpPut]
+        public IHttpActionResult ApproveArticle([FromBody] ReviewArticleRequest param)
+        {
+
+            string userId = User.Identity.GetUserId();
+            ReviewedArticleView reviewedArticle = ReviewedArticleComponent.GetReviewedArticle(userId, param.Article.Id);
+
+            if (reviewedArticle == null)
+            {
+                return BadRequest("Review is not available for this user and this article");
+            }
+            reviewedArticle.ReviewPoints = param.ReviewPoints;
+            reviewedArticle.ReviewStatus = (int)ReviewStatus.Reviewed;
+            bool updated = ReviewedArticleComponent.Update(reviewedArticle);
+            int numberOfReviewed = ReviewedArticleComponent.GetNumberofReviewed(reviewedArticle);
+            if (numberOfReviewed == 3)
+            {
+                bool isApproved = ReviewedArticleComponent.CheckIfApproved(reviewedArticle);
                 if (isApproved)
                 {
-                    param.ApprovalStatus = (int)ApprovalStatus.Approved;
-                } else
-                {
-                    param.ApprovalStatus = (int)ApprovalStatus.Rejected;
+                    param.Article.ApprovalStatus = (int)ApprovalStatus.Approved;
                 }
-                bool rez = Component.Update(param);
+                else
+                {
+                    param.Article.ApprovalStatus = (int)ApprovalStatus.Rejected;
+                }
+                bool rez = Component.Update(param.Article);
                 if (rez)
                 {
-                    return Ok(item);
-                } else
+                    return Ok();
+                }
+                else
                 {
                     return BadRequest("Server crashed! Article was not updated");
                 }
             }
-            if (item == null)
+            if (!updated)
             {
-                return BadRequest("Server crashed! Review was not added");
+                return BadRequest("Server crashed! Review was not updated");
             }
-            return Ok(item);
+            return Ok();
         }
 
+        [Route("userReviewAbstain")]
+        [HttpPut]
+        public IHttpActionResult AbstainReviewArticle([FromBody] ArticleView param)
+        {
+
+            string userId = User.Identity.GetUserId();
+            ReviewedArticleView reviewedArticle = ReviewedArticleComponent.GetReviewedArticle(userId, param.Id);
+
+            if (reviewedArticle == null)
+            {
+                return BadRequest("Review is not available for this user and this article");
+            }
+            reviewedArticle.ReviewStatus = (int)ReviewStatus.Abstain;
+            bool updated = ReviewedArticleComponent.Update(reviewedArticle);
+            if (!updated)
+            {
+                return BadRequest("Server crashed! Review was not updated");
+            }
+            return Ok();
+        }
     }
 }
