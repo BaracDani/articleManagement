@@ -152,6 +152,10 @@
     <Compile Include="Migrations\201805172043040_RemoveApprovedColumn.Designer.cs">
       <DependentUpon>201805172043040_RemoveApprovedColumn.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805211426335_AddCommentAttribute.cs" />
+    <Compile Include="Migrations\201805211426335_AddCommentAttribute.Designer.cs">
+      <DependentUpon>201805211426335_AddCommentAttribute.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ActivityLogRepository.cs" />
@@ -216,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201805172043040_RemoveApprovedColumn.resx">
       <DependentUpon>201805172043040_RemoveApprovedColumn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805211426335_AddCommentAttribute.resx">
+      <DependentUpon>201805211426335_AddCommentAttribute.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

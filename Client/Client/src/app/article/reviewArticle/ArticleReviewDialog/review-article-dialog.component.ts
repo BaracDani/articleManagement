@@ -29,7 +29,7 @@ export class ReviewArticleDialog {
   }
 
   onReviewArticle(): void {
-    this.articleService.reviewArticle(this.data, this.reviewPoints).subscribe((result: any) => {
+    this.articleService.reviewArticle(this.data, this.reviewPoints, this.comment).subscribe((result: any) => {
 
       this.dialogRef.close();
     }, (error: any) => {

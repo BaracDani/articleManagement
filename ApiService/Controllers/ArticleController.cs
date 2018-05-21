@@ -291,6 +291,7 @@ namespace ApiService.Controllers
                 return BadRequest("Review is not available for this user and this article");
             }
             reviewedArticle.ReviewPoints = param.ReviewPoints;
+            reviewedArticle.Comment = param.Comment;
             reviewedArticle.ReviewStatus = (int)ReviewStatus.Reviewed;
             bool updated = ReviewedArticleComponent.Update(reviewedArticle);
             int numberOfReviewed = ReviewedArticleComponent.GetNumberofReviewed(reviewedArticle);

@@ -40,5 +40,7 @@ namespace ApiService.Models
     {
         public ArticleView Article { get; set; }
         public int ReviewPoints { get; set; }
+
+        public string Comment { get; set; }
     }
 }

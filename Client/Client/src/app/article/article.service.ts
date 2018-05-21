@@ -124,12 +124,12 @@ export class ArticleService {
       catchError(this.commonService.handleError<any>('Editor rejectArticle')));
   }
 
-  reviewArticle(article: IArticle, reviewPoints: number): Observable<any> {
+  reviewArticle(article: IArticle, reviewPoints: number, comment: string): Observable<any> {
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
     headers = headers.append('Authorization', 'Bearer ' + this.authProfile.getProfile().token);
     let url = this.commonService.getBaseUrl() + '/api/article/userReview';
 
-    return this._http.put(url, {article: article, reviewPoints: reviewPoints}, {headers: headers}).pipe(
+    return this._http.put(url, {article: article, reviewPoints: reviewPoints, comment: comment}, {headers: headers}).pipe(
       tap(_ => console.log(`UserReview approveArticle`)),
       catchError(this.commonService.handleError<any>('UserReview approveArticle')));
   }

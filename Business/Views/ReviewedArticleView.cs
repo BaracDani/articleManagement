@@ -11,6 +11,8 @@ namespace Business.Views
 
         public int ReviewPoints { get; set; }
 
+        public string Comment { get; set; }
+
         public long ArticleId { get; set; }
 
         public string UserId { get; set; }
@@ -25,6 +27,7 @@ namespace Business.Views
                 Id = item.Id,
                 ReviewStatus = item.ReviewStatus,
                 ReviewPoints = item.ReviewPoints,
+                Comment = item.Comment,
                 ArticleId = item.ArticleId,
                 UserId = item.UserId
             };
@@ -40,6 +43,7 @@ namespace Business.Views
                 Id = item.Id,
                 ReviewStatus = item.ReviewStatus,
                 ReviewPoints = item.ReviewPoints,
+                Comment = item.Comment,
                 ArticleId = item.ArticleId,
                 UserId = item.UserId
             };

@@ -10,6 +10,8 @@ namespace DataAccess.Entities
 
         public int ReviewPoints { get; set; }
 
+        public string Comment { get; set; }
+
         public virtual Article Article { get; set; }
 
         [Required]
