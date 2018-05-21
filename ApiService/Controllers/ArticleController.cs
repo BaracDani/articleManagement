@@ -21,7 +21,7 @@ namespace ApiService.Controllers
     {
         public IReviewedArticleComponent ReviewedArticleComponent { get; }
 
-        public ArticleController(IArticleComponent component, IReviewedArticleComponent reviewedArticleComponent): base(component)
+        public ArticleController(IArticleComponent component, IReviewedArticleComponent reviewedArticleComponent) : base(component)
         {
             this.ReviewedArticleComponent = reviewedArticleComponent;
         }
@@ -262,7 +262,7 @@ namespace ApiService.Controllers
         [Authorize(Roles = "Editor")]
         [Route("editorApprove")]
         [HttpPut]
-        public IHttpActionResult ApproveArticle([FromBody] UsersToReview param)
+        public async Task<IHttpActionResult> ApproveArticle([FromBody] UsersToReview param)
         {
             foreach (string userId in param.UserIds)
             {
@@ -275,24 +275,39 @@ namespace ApiService.Controllers
                 {
                     return BadRequest("Server crashed! Review was not added");
                 }
+
+                var userToReview = await this.AppUserManager.FindByIdAsync(userId);
+                await this.AppUserManager.SendEmailAsync(userToReview.Id,
+                                                   "Article needs review!",
+                                                   "A new article '" + param.Article.Title + "' needs to be reviewed by you!");
             }
 
             if (param.UserIds.ToArray().Length > 0)
             {
                 bool rez = Component.Update(param.Article);
             }
+
+            var user = await this.AppUserManager.FindByIdAsync(param.Article.UserId);
+            await this.AppUserManager.SendEmailAsync(user.Id,
+                                               "Article approved by editor",
+                                               "Your article '" + param.Article.Title + "' was approved by the editor of the journal you applied");
             return Ok("Users added for review");
         }
 
         [Authorize(Roles = "Editor")]
         [Route("editorReject")]
         [HttpPut]
-        public IHttpActionResult RejectArticle([FromBody] ArticleView param)
+        public async Task<IHttpActionResult> RejectArticle([FromBody] ArticleView param)
         {
             param.ApprovalStatus = (int)ApprovalStatus.Rejected;
             bool rez = Component.Update(param);
             if (rez)
             {
+
+                var user = await this.AppUserManager.FindByIdAsync(param.UserId);
+                await this.AppUserManager.SendEmailAsync(user.Id,
+                                                   "Article rejected",
+                                                   "Your article '" + param.Title + "' was rejected");
                 return Ok("Article rejected succesful");
             }
 
